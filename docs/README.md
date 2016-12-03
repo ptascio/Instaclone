@@ -5,7 +5,7 @@
   This will be a link to the production site.
 </p>
 
-<p><a href="https://www.instagram.com/">Trello Link</a>></p>
+<p><a href="https://www.instagram.com/">Trello Link</a></p>
 
 <h2>Minimum Viable Product</h2>
 <p>
@@ -26,3 +26,7 @@
 </ul>
 
 <h2>Design Docs</h2>
+
+<ul>
+  <li><a href="/wireframes">View Wireframes</a></li>
+</ul>
