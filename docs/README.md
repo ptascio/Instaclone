@@ -28,5 +28,10 @@
 <h2>Design Docs</h2>
 
 <ul>
-  <li><a href="/wireframes">View Wireframes</a></li>
+  <li><a href="https://github.com/ptascio/Instaclone/tree/master/docs/wireframes">
+    View Wireframes</a></li>
+  <li><a href="">React Components</a></li>
+  <li><a href="">API Endpoints</a></li>
+  <li><a href="">DB Schema</a></li>
+  <li><a href="">Sample State</a></li>
 </ul>
