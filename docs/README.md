@@ -30,7 +30,10 @@
 <ul>
   <li><a href="https://github.com/ptascio/Instaclone/tree/master/docs/wireframes">
     View Wireframes</a></li>
-  <li><a href="">React Components</a></li>
+  <li>
+    <a href="https://github.com/ptascio/Instaclone/blob/master/docs/component-hierarchy.md">
+    React Components</a>
+  </li>
   <li><a href="">API Endpoints</a></li>
   <li><a href="">DB Schema</a></li>
   <li><a href="">Sample State</a></li>
