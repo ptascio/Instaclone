@@ -34,7 +34,28 @@
     <a href="https://github.com/ptascio/Instaclone/blob/master/docs/component-hierarchy.md">
     React Components</a>
   </li>
-  <li><a href="">API Endpoints</a></li>
+  <li><a href="https://github.com/ptascio/Instaclone/blob/master/docs/APIEndpoints.md">API Endpoints</a></li>
   <li><a href="https://github.com/ptascio/Instaclone/blob/master/docs/schema.md">DB Schema</a></li>
   <li><a href="https://github.com/ptascio/Instaclone/blob/master/docs/sample_state.md">Sample State</a></li>
 </ul>
+
+<h2>Implementation Timeline</h2>
+
+<h3>Phase 1: Backend setup and Front End User Authentication (2 days)</h3>
+<p><strong>Objective:</strong> Functioning Rails app with front-end Authentication</p>
+
+<h3>Phase 3: Photos Model, API and Components (2 days)</h3>
+<p><strong>Objective</strong> Logged in user can upload photos with caption and delete photos.</p>
+
+<h3>Phase 4: Followers/Following (1-2 days)</h3>
+<p><strong>Objective</strong> Logged in user can follow other users and have followers.</p>
+
+<h3>Phase 5: Comments/Likes (1-2 days)</h3>
+<p><strong>Objective</strong> Logged in user can comment on and like other's photos.</p>
+
+<h3>Bonus Features</h3>
+  <ul>
+    <li>Direct Messaging</li>
+    <li>Hashtags</li>
+    <li>Location Tagging</li>
+  </ul>
