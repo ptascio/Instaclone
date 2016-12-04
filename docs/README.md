@@ -21,8 +21,8 @@
   <li><input type="checkbox">Likes</li>
   <li><input type="checkbox">Commenting on images</li>
   <li><input type="checkbox">Following and Photo feed</li>
-  <li><input type="checkbox"><strong>Bonus:</string>Direct messaging</li>
-  <li><input type="checkbox"><strong>Bonus:</string>Hashtags</li>
+  <li><input type="checkbox"><strong>Bonus: </string>Direct messaging</li>
+  <li><input type="checkbox"><strong>Bonus: </string>Hashtags</li>
 </ul>
 
 <h2>Design Docs</h2>
