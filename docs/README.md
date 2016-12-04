@@ -35,6 +35,6 @@
     React Components</a>
   </li>
   <li><a href="">API Endpoints</a></li>
-  <li><a href="">DB Schema</a></li>
-  <li><a href="">Sample State</a></li>
+  <li><a href="https://github.com/ptascio/Instaclone/blob/master/docs/schema.md">DB Schema</a></li>
+  <li><a href="https://github.com/ptascio/Instaclone/blob/master/docs/sample_state.md">Sample State</a></li>
 </ul>
