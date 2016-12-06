@@ -5,11 +5,11 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 
-  attr_reader: password
-  after_intialize :ensure_session_token
+  attr_reader :password
+  after_initialize :ensure_session_token
 
-  def self.find_by_credentails(username, password)
-    user = User.find(params[:id])
+  def self.find_by_credentials(username, password)
+    user = User.find_by(username: username)
 
     user && user.is_password?(password) ? user : nil
   end
