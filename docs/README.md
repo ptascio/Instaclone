@@ -1,8 +1,6 @@
 <h1>Instaclone</h1>
 
-<p><a href="https://www.heroku.com/">Heroku Link</a>
-  <strong>Note:</strong>
-  This will be a link to the production site.
+<p><a href="https://instaclonepics.herokuapp.com/#/">Heroku Link</a>
 </p>
 
 <p><a href="https://trello.com/b/AbHg2kGO/instaclone">Trello Link</a></p>
