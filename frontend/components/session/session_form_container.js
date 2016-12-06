@@ -12,7 +12,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
- debugger
   let formType;
   if ((ownProps.location.pathname).includes('login')){
     formType = 'login';
