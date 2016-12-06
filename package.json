@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "./node_modules/.bin.webpack"
+    "postinstall": "./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
