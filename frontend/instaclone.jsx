@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Root from './components/root';
 import configureStore from './store/store';
 
-window.store = configureStore();
+
 document.addEventListener('DOMContentLoaded', () => {
+  let store = configureStore();
   const root = document.getElementById('content');
-  ReactDOM.render(<h1>Welcome To Instaclone</h1>, root);
+  ReactDOM.render(<Root store={ store } />, root);
 });
