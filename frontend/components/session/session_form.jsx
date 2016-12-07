@@ -32,6 +32,7 @@ class SessionForm extends React.Component{
   render() {
     const link = (this.props.formType === 'login' ? 'signup' : 'login');
     const errors = this.props.errors;
+    if (this.props.formType === 'signup'){
     return (
       <section>
         <article className="big-container group">
@@ -79,6 +80,44 @@ class SessionForm extends React.Component{
         </article>
     </section>
     );
+  } else {
+    return (
+      <section>
+        <article className="big-container group">
+          <section className="img-container">
+            <img src={window.asset.homepage_photo} />
+          </section>
+          <section className="text-container">
+        <section className="form-container login-container">
+
+          <h1 className="logo">Instaclone</h1>
+          <form className="inner-form">
+
+            <input type="text"
+              value={ this.state.username }
+              placeholder="Username"
+              onChange={ this.handleChange("username")} />
+
+
+            <input type="password"
+              value={ this.state.password }
+              placeholder="Password"
+              onChange={ this.handleChange("password")} />
+            <button onClick={ this.handleSubmit }>Log In</button>
+
+          </form>
+        </section>
+        <section className="have-account">
+          <p className="inside-account">Don't have an account? &nbsp;
+              <Link to={`/${link}`}>Sign Up</Link>
+          </p>
+        </section>
+      </section>
+        <p>{ errors }</p>
+        </article>
+    </section>
+    )
+  }
   }
 }
 

@@ -22,7 +22,6 @@ class Greeting extends React.Component {
         return (
           <section>
             <Link to="/signup">Sign Up</Link><br />
-
           </section>
         );
       }
