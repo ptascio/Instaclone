@@ -36,3 +36,8 @@ ol, ul {
 a {
 	text-decoration: none;
 }
+group::after {
+	content: "";
+	display: block;
+	clear: both;
+}

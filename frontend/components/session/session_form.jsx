@@ -34,7 +34,13 @@ class SessionForm extends React.Component{
     const errors = this.props.errors;
     return (
       <section>
+        <article className="big-container group">
+          <section className="img-container">
+            <img src={window.asset.homepage_photo} />
+          </section>
+          <section className="text-container">
         <section className="form-container">
+
           <h1 className="logo">Instaclone</h1>
           <h2 className="entice">Sign up to see photos and
             videos from your friends.</h2>
@@ -68,8 +74,10 @@ class SessionForm extends React.Component{
               <Link to={`/${link}`}>Log In</Link>
           </p>
         </section>
-        <p>{ errors }</p>
       </section>
+        <p>{ errors }</p>
+        </article>
+    </section>
     );
   }
 }

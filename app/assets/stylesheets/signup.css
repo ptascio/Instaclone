@@ -1,10 +1,20 @@
+.big-container {
+  width: 735px;
+  height: 712px;
+  margin: 0 auto;
+}
+
+
+.text-container {
+  float: right;
+}
+
 .form-container {
   background: #fff;
   border: 1px solid #efefef;
   width: 350px;
   height: 450px;
   display: block;
-  margin: 0 auto;
   font-family: 'Heebo', sans-serif;
   text-align: center;
 }
@@ -99,4 +109,8 @@ button {
   text-align: center;
   font-weight: bold;
   font-family: 'Heebo', sans-serif;
+}
+
+.img-container {
+  float: left;
 }
