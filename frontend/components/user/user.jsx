@@ -3,15 +3,15 @@ import { Link, withRouter } from 'react-router';
 
 
 class User extends React.Component {
-  componentDidMount() {
-    this.props.fetchUser(this.props.params.userId);
+
+  constructor(props){
+    super(props);
   }
 
   render() {
-    const { currentUser } = this.props;
     return (
       <section>
-        <h2>Hello { currentUser.username }</h2>
+        <h3>Hello { this.props.currentUser.username}</h3>
       </section>
     );
   }
