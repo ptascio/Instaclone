@@ -11,6 +11,7 @@ class SessionForm extends React.Component{
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.logInAsGuest = this.logInAsGuest.bind(this);
   }
 
   // redirect() {
@@ -29,6 +30,16 @@ class SessionForm extends React.Component{
    };
   }
 
+  logInAsGuest(e){
+    e.preventDefault();
+    const guestUser = {
+      username: "Guest User",
+      email: "guest@email.com",
+      password: "123456"
+    };
+    this.props.login(guestUser).then(() => this.props.router.push("/"));
+  }
+
   render() {
     const link = (this.props.formType === 'login' ? 'signup' : 'login');
     const errors = this.props.errors;
@@ -45,7 +56,7 @@ class SessionForm extends React.Component{
           <h1 className="logo">Instaclone</h1>
           <h2 className="entice">Sign up to see photos and
             videos from your friends.</h2>
-            <button>Log in as Guest</button>
+          <button onClick={ this.logInAsGuest }>Log in as Guest</button>
             <p className="or">or</p>
           <form className="inner-form">
 
@@ -116,7 +127,7 @@ class SessionForm extends React.Component{
         <p>{ errors }</p>
         </article>
     </section>
-    )
+  );
   }
   }
 }
