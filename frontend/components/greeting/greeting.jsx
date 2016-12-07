@@ -7,6 +7,7 @@ class Greeting extends React.Component {
   }
 //do this inside of the render
 //fix indentation
+
   render() {
 
     if (this.props.currentUser) {
@@ -21,7 +22,7 @@ class Greeting extends React.Component {
         return (
           <section>
             <Link to="/signup">Sign Up</Link><br />
-            <Link to="/login">Log In</Link>
+
           </section>
         );
       }

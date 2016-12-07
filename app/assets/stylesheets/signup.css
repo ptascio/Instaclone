@@ -1,0 +1,102 @@
+.form-container {
+  background: #fff;
+  border: 1px solid #efefef;
+  width: 350px;
+  height: 450px;
+  display: block;
+  margin: 0 auto;
+  font-family: 'Heebo', sans-serif;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.disclaimer {
+  font-size: 14px;
+  color: #999;
+  margin: 10px 60px;
+  line-height: 20px;
+}
+
+.entice {
+  font-size: 17px;
+  line-height: 20px;
+  margin: 0 40px 10px;
+  text-align: center;
+  color: #999;
+  font-weight: 600;
+  display: block;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 7px;
+  border-radius: 3px;
+  width: 268px;
+  height: 30px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-size: 14px;
+  border: 1px solid #efefef;
+  padding: 0 0 0 5px;
+}
+
+.or {
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #999;
+  margin: 10px 0;
+}
+
+.logo {
+  font-family: 'Lobster Two', cursive;
+  font-size: 46px;
+  margin: 20px 0;
+}
+
+button {
+  margin: 0 auto;
+  margin-top: 10px;
+  display: block;
+  width: 268px;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  background: #3897f0;
+  border: 1px solid #3897f0;
+  cursor: pointer;
+  color: #fff;
+  padding: 0 11px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.inner-form {
+  text-align: center;
+  height: 400px;
+}
+
+.have-account {
+  width: 350px;
+  height: 50px;
+  background: #fff;
+  border-radius: 1px;
+  border: 1px solid #efefef;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+.inside-account {
+  color: #262626;
+  width: 318px;
+  font-size: 14px;
+  margin: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Heebo', sans-serif;
+}

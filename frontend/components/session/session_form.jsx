@@ -34,25 +34,40 @@ class SessionForm extends React.Component{
     const errors = this.props.errors;
     return (
       <section>
-        <h2>{ this.props.formtype }</h2>
-        <form>
-          <label>Username</label>
-          <input type="text"
-            value={ this.state.username }
-            onChange={ this.handleChange("username")} />
+        <section className="form-container">
+          <h1 className="logo">Instaclone</h1>
+          <h2 className="entice">Sign up to see photos and
+            videos from your friends.</h2>
+            <button>Log in as Guest</button>
+            <p className="or">or</p>
+          <form className="inner-form">
 
-          <label>Email</label>
-          <input type="text"
-            value={ this.state.email }
-            onChange={ this.handleChange("email")} />
+            <input type="text"
+              value={ this.state.username }
+              placeholder="Username"
+              onChange={ this.handleChange("username")} />
 
-          <label>Password</label>
-          <input type="password"
-            value={ this.state.password }
-            onChange={ this.handleChange("password")} />
-        </form>
-        <button onClick={ this.handleSubmit }>Submit</button>
-        <Link to={`/${link}`}>{ link }</Link>
+
+            <input type="text"
+              value={ this.state.email }
+              placeholder="Email"
+              onChange={ this.handleChange("email")} />
+
+
+            <input type="password"
+              value={ this.state.password }
+              placeholder="Password"
+              onChange={ this.handleChange("password")} />
+            <button onClick={ this.handleSubmit }>Sign up</button>
+
+            <p className="disclaimer">By signing up, you agree to our <strong>Terms &amp; Privacy Policy</strong>.</p>
+          </form>
+        </section>
+        <section className="have-account">
+          <p className="inside-account">Have an account? &nbsp;
+              <Link to={`/${link}`}>Log In</Link>
+          </p>
+        </section>
         <p>{ errors }</p>
       </section>
     );
