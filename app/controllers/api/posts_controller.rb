@@ -9,25 +9,25 @@ class Api::PostsController < ApplicationController
     render :show
   end
 
-  def new
-    @post = Post.new(post_params)
-    render :new
-  end
+  # def new
+  #   @post = Post.new(post_params)
+  #   render :new
+  # end
 
   def create
     #current_user
-    @post = Post.new(post_params)
-    render :show
-    # if @post.save
-    #   redirect_to post_url(@post.id)
-    # else
-    #   render :new
-    # end
+    # @post = Post.new(post_params)
+
+    @post = current_user.posts.new(post_params)
+    debugger
+    if @post.save
+      render "api/posts/show"
+    end
   end
 
   private
     def post_params
-      params.require(:post).permit(:image, :user_id)
+      params.require(:post).permit(:image, :caption)
     end
 
 end

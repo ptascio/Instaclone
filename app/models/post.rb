@@ -13,7 +13,7 @@
 #
 
 class Post < ActiveRecord::Base
-  validates :user_id, presence: true, uniqueness: true
+  validates :user_id, presence: true
 
   has_attached_file :image, default_url: "homepage_photo.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
