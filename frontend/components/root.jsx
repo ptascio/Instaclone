@@ -12,19 +12,27 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
       const currentUser = store.getState().session.currentUser;
     if (currentUser){
-      replace('/user');
+      replace('/');
     }
   };
 
+  const _ensureLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser){
+      replace('/welcome');
+    }
+  };
 
 
 return (
   <Provider store={ store }>
     <Router history={ hashHistory }>
-      <Route path="/" component={ App }>
-        <IndexRoute component={ SessionFormContainer } />
-          <Route path="/login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
-          <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
+      <Route path='/welcome' component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} >
+        <Route path="/login" component={ SessionFormContainer } />
+        <Route path="/signup" component={ SessionFormContainer } />
+      </Route>
+      <Route path="/" onEnter={_ensureLoggedIn} component={ App }>
+
       </Route>
     </Router>
   </Provider>
