@@ -1,9 +1,24 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  email           :string           not null
+#  followers       :integer          default(0)
+#  following       :integer          default(0)
+#  password_digest :string           not null
+#  session_token   :string           not null
+#
+
 class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :password_digest, presence: true
   validates :session_token, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+
+  has_many :posts
 
   attr_reader :password
   after_initialize :ensure_session_token
