@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Api::PostsController < ApplicationController
 
   def index
     @posts = Post.all
@@ -10,23 +10,24 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new(post_params)
     render :new
   end
 
   def create
+    #current_user
     @post = Post.new(post_params)
-
-    if @post.save
-      redirect_to post_url(@post.id)
-    else
-      render :new
-    end
+    render :show
+    # if @post.save
+    #   redirect_to post_url(@post.id)
+    # else
+    #   render :new
+    # end
   end
 
   private
     def post_params
-      params.require(:post).permit(:image_url, :user_id)
+      params.require(:post).permit(:image, :user_id)
     end
 
 end
