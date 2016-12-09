@@ -6,37 +6,44 @@ class PostIndex extends React.Component {
   constructor(props){
     super(props);
 
+    this.removePost = this.removePost.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchPosts();
   }
 
+  componentWillReceiveProps(nextProps){
+    if(this.props.posts.length !== nextProps.posts.length){
+      nextProps.fetchPosts();
+    }
+  }
+
+  removePost() {
+    this.props.deletePost();
+  }
+
   render() {
 
-  const item = this.props.posts.map(function(post, index) {
-    return (
-      <li key={post.id}>
-        <span>{post.username}</span>
-        <img src={post.image} height="200"/>
+    const item = this.props.posts.map(function(post, index) {
+      return (
+        <p key={index}>
+          <span>{post.username}</span>
+          <img src={post.image} height="200"/>
+        </p>
+      );
+    });
 
-      </li>
-    );
-  });
 
     return (
       <div>
         <h1>This is posts index</h1>
-        <ul>
+        <article>
           { item }
-        </ul>
+        </article>
       </div>
     );
   }
 }
 
 export default PostIndex;
-
-// export function selectAllPokemon(state) {
-//   return Object.values(state.pokemon);
-// }
