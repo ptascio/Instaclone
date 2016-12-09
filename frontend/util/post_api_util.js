@@ -14,3 +14,10 @@ export const fetchPosts = () => {
     method: "GET",
   });
 };
+
+export const deletePost = (id) => {
+  return $.ajax({
+    url: `/api/posts/${id}`,
+    method: "DELETE"
+  });
+};

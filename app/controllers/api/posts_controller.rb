@@ -9,18 +9,20 @@ class Api::PostsController < ApplicationController
     render :show
   end
 
-  # def new
-  #   @post = Post.new(post_params)
-  #   render :new
-  # end
-
   def create
-    #current_user
-    # @post = Post.new(post_params)
-
     @post = current_user.posts.new(post_params)
     if @post.save
       render "api/posts/show"
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if current_user.id == @post.user.id
+      @post.destroy
+      render "api/posts/show"
+    else
+      render js: "alert('You can't delte another's posts!);"
     end
   end
 
