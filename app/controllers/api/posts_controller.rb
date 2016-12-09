@@ -19,7 +19,6 @@ class Api::PostsController < ApplicationController
     # @post = Post.new(post_params)
 
     @post = current_user.posts.new(post_params)
-    debugger
     if @post.save
       render "api/posts/show"
     end

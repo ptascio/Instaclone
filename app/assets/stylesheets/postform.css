@@ -1,0 +1,91 @@
+.big-section {
+    margin: 0 auto;
+    border: 1px solid #000;
+    width: 600px;
+}
+
+.post-container {
+  font-family: 'Heebo', sans-serif;
+  margin: 100px 150px 150px ;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  border-radius: 3px;
+
+  padding-top: 50px;
+  background: #fff;
+}
+
+.post-button {
+  background: #fff;
+  color: #3897f0;
+  font-weight: 200;
+}
+
+label.myLabel input[type="file"] {
+    position: fixed;
+    top: -1000px;
+}
+
+/***** Example custom styling *****/
+.myLabel {
+    border: 1px solid #3897f0;;
+    border-radius: 3px;
+    padding: 8px 8px;
+    margin: 0 auto;
+    background: #FFF;
+    display: block;
+    color: #3897f0;
+    cursor: pointer;
+    width: 252px;
+    font-family: 'Heebo', sans-serif;
+}
+/*.myLabel:hover {
+
+}
+.myLabel:active {
+    background: #eee;
+}
+.myLabel :invalid + span {
+    color: #3897f0;
+}
+.myLabel :valid + span {
+    color: #3897f0;
+}*/
+
+/*.inside-span {
+  height: 30px;
+  margin: 10px 0 0 0;
+  font-family: 'Heebo', sans-serif;
+}*/
+
+.image-container {
+  margin: 0 auto;
+}
+
+.caption-label {
+  margin-top: 30px;
+}
+
+.caption {
+  text-align: center;
+  color: #3897f0;
+  border: 1px solid #3897f0;
+  font-size: 16px;
+
+}
+
+.caption::-webkit-input-placeholder {
+   color: #3897f0;
+}
+
+.caption:-moz-placeholder { /* Firefox 18- */
+   color: #3897f0;
+}
+
+.caption::-moz-placeholder {  /* Firefox 19+ */
+   color: #3897f0;
+}
+
+.caption:-ms-input-placeholder {
+   color: #3897f0;
+}
