@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class PostForm extends React.Component {
   constructor(props){
@@ -14,6 +15,7 @@ class PostForm extends React.Component {
     this.updateFile = this.updateFile.bind(this);
     this.updateCaption = this.updateCaption.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.goPosts = this.goPosts.bind(this);
   }
 
   updateCaption(e){
@@ -28,11 +30,14 @@ class PostForm extends React.Component {
     var formData = new FormData();
     formData.append("post[caption]", this.state.caption);
     formData.append("post[image]", this.state.imageFile);
-    this.props.makePost(formData, this.goBack);
+    this.props.makePost(formData);
+    this.goPosts();
   }
+  //
 
-  goBack() {
-    this.context.router.push("/");
+  goPosts() {
+    debugger
+    this.props.router.push("/posts");
   }
 
   updateFile(e) {
@@ -57,16 +62,16 @@ class PostForm extends React.Component {
       <section className="big-section">
 
         <section className="post-container group">
-          <h1>Hello { this.state.username }This is the PostForm</h1>
-          <h2>Upload</h2>
+
+          <h2 className="upload">Upload</h2>
         <form>
           <label className="myLabel">
-            <input type="file" onChange={this.updateFile}/>
-            <span className="inside-span">Choose File</span>
+            <input type="file" onChange={this.updateFile} className="myLabel-button"/>
+            <span className="mask">Choose File</span>
           </label>
           <img src={this.state.imageUrl} className="image-container"/>
           <div className="caption-label">
-            <input className="caption" type="text" onChange={this.updateCaption} placeholder="Caption"></input>
+            <textarea className="caption" type="text" onChange={this.updateCaption} placeholder="Caption"></textarea>
           </div>
             <button onClick={this.handleSubmit} className="post-button">Post your Picture!</button>
         </form>
@@ -76,4 +81,4 @@ class PostForm extends React.Component {
   }
 }
 
-export default PostForm;
+export default withRouter(PostForm);

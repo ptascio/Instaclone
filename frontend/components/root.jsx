@@ -5,6 +5,9 @@ import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import UserContainer from './user/user_container';
+import PostIndex from './post/post_index';
+import PostFormContainer from './post/post_form_container';
+
 
 
 const Root = ({ store }) => {
@@ -23,7 +26,8 @@ const Root = ({ store }) => {
     }
   };
 
-
+//on App build the header in the App component
+//build another c
 return (
   <Provider store={ store }>
     <Router history={ hashHistory }>
@@ -32,8 +36,10 @@ return (
         <Route path="/signup" component={ SessionFormContainer } />
       </Route>
       <Route path="/" onEnter={_ensureLoggedIn} component={ App }>
-
+        <IndexRoute component={PostFormContainer}/>
+        <Route path="/posts" component={PostIndex} />
       </Route>
+
     </Router>
   </Provider>
 );
