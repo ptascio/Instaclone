@@ -7,3 +7,10 @@ export const makePost = (formData) => {
     data: formData
   });
 };
+
+export const fetchPosts = () => {
+  return $.ajax({
+    url: "/api/posts",
+    method: "GET",
+  });
+};

@@ -5,7 +5,7 @@ import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import UserContainer from './user/user_container';
-import PostIndex from './post/post_index';
+import PostIndexContainer from './post/post_index_container';
 import PostFormContainer from './post/post_form_container';
 
 
@@ -37,7 +37,7 @@ return (
       </Route>
       <Route path="/" onEnter={_ensureLoggedIn} component={ App }>
         <IndexRoute component={PostFormContainer}/>
-        <Route path="/posts" component={PostIndex} />
+        <Route path="/posts" component={PostIndexContainer} />
       </Route>
 
     </Router>

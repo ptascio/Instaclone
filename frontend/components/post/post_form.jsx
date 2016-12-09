@@ -36,7 +36,6 @@ class PostForm extends React.Component {
   //
 
   goPosts() {
-    debugger
     this.props.router.push("/posts");
   }
 
