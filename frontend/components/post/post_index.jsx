@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class PostIndex extends React.Component {
   constructor(props){
     super(props);
@@ -11,16 +12,20 @@ class PostIndex extends React.Component {
   }
 
   render() {
-   const firstPost = this.props.posts[0];
-   let name;
-   if (firstPost) {
-    name = firstPost["image"];
-  }
-  debugger
+  const item = this.props.posts.map(function(post, index) {
+    return (
+      <li key={index}>
+        <img src={post.image} height="200"/>
+      </li>
+    );
+  });
+
     return (
       <div>
         <h1>This is posts index</h1>
-        <img src={ name } />
+        <ul>
+          { item }
+        </ul>
       </div>
     );
   }
