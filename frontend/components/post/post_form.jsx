@@ -55,19 +55,22 @@ class PostForm extends React.Component {
   render(){
     return (
       <section className="big-section">
-        <h1>Hello { this.state.username }This is the PostForm</h1>
-        <h2>Upload</h2>
-        <form className="post-container">
+
+        <section className="post-container group">
+          <h1>Hello { this.state.username }This is the PostForm</h1>
+          <h2>Upload</h2>
+        <form>
           <label className="myLabel">
             <input type="file" onChange={this.updateFile}/>
             <span className="inside-span">Choose File</span>
           </label>
+          <img src={this.state.imageUrl} className="image-container"/>
           <div className="caption-label">
             <input className="caption" type="text" onChange={this.updateCaption} placeholder="Caption"></input>
           </div>
-            <img src={this.state.imageUrl} className="image-container"/>
             <button onClick={this.handleSubmit} className="post-button">Post your Picture!</button>
         </form>
+      </section>
       </section>
     );
   }
