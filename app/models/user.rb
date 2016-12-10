@@ -18,7 +18,10 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 
-  has_many :posts
+  has_many :posts,
+    class_name: "Post",
+    foreign_key: :user_id,
+    primary_key: :id
 
   attr_reader :password
   after_initialize :ensure_session_token

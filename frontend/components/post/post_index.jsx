@@ -26,7 +26,6 @@ class PostIndex extends React.Component {
   render() {
 
     const items = this.props.posts.map(function(post, index) {
-      
       return (
         <li key={index}>
           <h3>{post.username}</h3>

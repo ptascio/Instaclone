@@ -34,6 +34,7 @@ export function destroyPost(post) {
 }
 
 export function makePost(post) {
+
   return(dispatch) => {
     return APIUtil.makePost(post).then(
       (post) => dispatch(receiveNewPost(post)),

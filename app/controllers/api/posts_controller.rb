@@ -1,7 +1,7 @@
 class Api::PostsController < ApplicationController
 
   def index
-    @posts = Post.includes(:user).all.order(created_at: :desc)
+    @posts = Post.where(user: current_user).all.order(created_at: :desc)
   end
 
   def show
@@ -12,7 +12,7 @@ class Api::PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      render "api/posts/show"
+      render "api/posts/index"
     end
   end
 
