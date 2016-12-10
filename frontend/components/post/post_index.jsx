@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import TimeAgo from 'react-timeago';
 
 
 class PostIndex extends React.Component {
@@ -29,11 +30,16 @@ class PostIndex extends React.Component {
       return (
         <li key={index} className="li-spacing">
           <article className="all-post post-holder">
+
           <header className="pieko _s6yvg">
+            <a className="header-img-container">
+              <img src={post.image} className="header-img"/>
+            </a>
             <div className="inner-header">
               <a className="inner-header-text notranslate">
                 {post.username}
               </a>
+              <TimeAgo date={post.created_at} />
             </div>
           </header>
             <div className="post-outside-container all-post-inside _22yr2">
