@@ -1,0 +1,102 @@
+.main-section {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  -webkit-box-ordinal-group: 4;
+  order: 3;
+}
+
+.main-post {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+
+.column-holder {
+  margin-bottom: 10px;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.section-post {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  padding: 0;
+  position: relative;
+}
+
+.all-post {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+    display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.post-holder {
+  margin-bottom: 30px;
+}
+
+.pieko {
+  height: 64px;
+  padding: 14px 20px;
+}
+
+._22yr2 {
+  display: block;
+  width: 100%;
+}
+
+.post-outside-container {
+  box-shadow: inset 0 0 20px 0 #efefef;
+  background-color: #edeeee;
+  display: block;
+  width: 100%;
+}
+
+.post-inner-container {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 100%;
+}
+
+.post-image {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.all-imgs {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
