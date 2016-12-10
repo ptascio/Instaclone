@@ -15,9 +15,9 @@ export const fetchPosts = () => {
   });
 };
 
-export const deletePost = (id) => {
+export const destroyPost = (post) => {
   return $.ajax({
-    url: `/api/posts/${id}`,
+    url: `/api/posts/${post.id}`,
     method: "DELETE"
   });
 };

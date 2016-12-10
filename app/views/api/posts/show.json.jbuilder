@@ -1,2 +1,3 @@
-json.user_name @post.user.username
-json.image_url asset_path(@post.image.url)
+json.id @post.id  
+json.username @post.user.username
+json.image asset_path(@post.image.url)

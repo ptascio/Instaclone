@@ -15,32 +15,34 @@ class PostIndex extends React.Component {
 
   componentWillReceiveProps(nextProps){
     if(this.props.posts.length !== nextProps.posts.length){
-      nextProps.fetchPosts();
+      this.props.fetchPosts();
     }
   }
 
-  removePost() {
-    this.props.deletePost();
+  removePost(post) {
+    this.props.destroyPost(post);
   }
 
   render() {
 
-    const item = this.props.posts.map(function(post, index) {
+    const items = this.props.posts.map(function(post, index) {
+      
       return (
-        <p key={index}>
-          <span>{post.username}</span>
+        <li key={index}>
+          <h3>{post.username}</h3>
           <img src={post.image} height="200"/>
-        </p>
+          <button onClick={() => this.removePost(post)}>Delete</button>
+        </li>
       );
-    });
+    }.bind(this));
 
 
     return (
       <div>
         <h1>This is posts index</h1>
-        <article>
-          { item }
-        </article>
+        <ul>
+          { items }
+        </ul>
       </div>
     );
   }

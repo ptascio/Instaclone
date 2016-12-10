@@ -1,7 +1,7 @@
 export const RECEIVE_NEW_POST = "RECEIVE_NEW_POST";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
-export const DELETE_POST_ITEM = "DELETE_POST_ITEM";
+export const REMOVE_POST = "REMOVE_POST";
 
 import * as APIUtil from '../util/post_api_util';
 
@@ -20,15 +20,15 @@ export const receivePosts = (posts) => ({
   posts
 });
 
-export const deletePostItem = (post) => ({
-  type: DELETE_POST_ITEM,
+export const removePost = (post) => ({
+  type: REMOVE_POST,
   post
 });
 
-export function deletePost(post) {
+export function destroyPost(post) {
   return(dispatch) => {
-    return APIUtil.deletePost(post).then(
-      (item) => dispatch(deletePostItem(item))
+    return APIUtil.destroyPost(post).then(
+      (post) => dispatch(removePost(post))
     );
   };
 }
@@ -36,7 +36,7 @@ export function deletePost(post) {
 export function makePost(post) {
   return(dispatch) => {
     return APIUtil.makePost(post).then(
-      (newPost) => dispatch(receiveNewPost(newPost)),
+      (post) => dispatch(receiveNewPost(post)),
       (err) => dispatch(receiveErrors(err))
     );
   };

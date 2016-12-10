@@ -17,12 +17,12 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     if current_user.id == @post.user.id
       @post.destroy
       render "api/posts/show"
     else
-      render js: "alert('You can't delte another's posts!);"
+      render js: "alert('You can't delete another's posts!);"
     end
   end
 
