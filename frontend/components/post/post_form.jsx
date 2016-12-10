@@ -36,7 +36,7 @@ class PostForm extends React.Component {
   //
 
   goPosts() {
-    this.props.router.push("/posts");
+    this.props.router.push("/");
   }
 
   updateFile(e) {

@@ -31,23 +31,49 @@ class PostIndex extends React.Component {
         <li key={index} className="li-spacing">
           <article className="all-post post-holder">
 
-          <header className="pieko _s6yvg">
+          <header className="pieko _s6yvg header-container">
             <a className="header-img-container">
               <img src={post.image} className="header-img"/>
             </a>
             <div className="inner-header">
-              <a className="inner-header-text notranslate">
+              <a className="inner-header-text">
                 {post.username}
               </a>
-              <TimeAgo date={post.created_at} />
             </div>
+            <time className="time-container">
+              <TimeAgo date={post.created_at} />
+            </time>
           </header>
             <div className="post-outside-container all-post-inside _22yr2">
               <div className="post-inner-container all-post-inside">
                 <img src={post.image} className="post-image all-imgs"/>
               </div>
             </div>
-          <button onClick={() => this.removePost(post)}>Delete</button>
+            <div className="info-container">
+              <section className="likes-container likes-container-flex-style">
+                <div className="likes-text-container likes-text-container-flex-style">
+                  <span className="likes-text">LIKES</span>
+                </div>
+              </section>
+              <ul className="caption-container">
+                <li className="caption-li">
+                  <h1 className="caption-wrapper">
+                    <a className="inner-header-text caption-name">{post.username}</a>
+                    <span className="caption-text">{post.caption}</span>
+                  </h1>
+                </li>
+              </ul>
+              <section className="add-comment">
+                <a className="heart-container">
+                  <span className="heart-toggle">
+                    <form className="comment-container">
+                      <input className="comment-input" type="text" placeholder="Add A Comment..."></input>
+                    </form>
+                  </span>
+                </a>
+              </section>
+            </div>
+          <button onClick={() => this.removePost(post)} className="edit-options">Delete</button>
           </article>
         </li>
       );

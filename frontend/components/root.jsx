@@ -36,8 +36,8 @@ return (
         <Route path="/signup" component={ SessionFormContainer } />
       </Route>
       <Route path="/" onEnter={_ensureLoggedIn} component={ App }>
-        <IndexRoute component={PostFormContainer}/>
-        <Route path="/posts" component={PostIndexContainer} />
+        <IndexRoute component={PostIndexContainer}/>
+        <Route path="/form" component={PostFormContainer} />
       </Route>
 
     </Router>
