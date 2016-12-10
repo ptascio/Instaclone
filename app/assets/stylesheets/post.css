@@ -1,3 +1,8 @@
+.li-spacing {
+  margin-bottom: 10%;
+}
+
+
 .main-section {
   -webkit-box-flex: 1;
   flex-grow: 1;
@@ -26,7 +31,7 @@
   -webkit-box-flex: 1;
   flex-grow: 1;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
 }
 
@@ -58,8 +63,22 @@
   position: relative;
 }
 
+.all-post-inside {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
 .post-holder {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .pieko {
@@ -99,4 +118,39 @@
   border: 0;
   font: inherit;
   vertical-align: baseline;
+}
+
+._s6yvg {
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  margin: 0;
+  position: relative;
+}
+
+.inner-header {
+  display: block;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: hidden;
+}
+
+.inner-header-text {
+  display: inline-block;
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 5px;
+  margin-left: -5px;
 }

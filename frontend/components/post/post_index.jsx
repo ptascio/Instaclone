@@ -27,11 +27,17 @@ class PostIndex extends React.Component {
 
     const items = this.props.posts.map(function(post, index) {
       return (
-        <li key={index}>
-          <article className="all-post post-holder pieko">
-          <h3>{post.username}</h3>
-            <div className="post-outside-container all-post _22yr2">
-              <div className="post-inner-container all-post">
+        <li key={index} className="li-spacing">
+          <article className="all-post post-holder">
+          <header className="pieko _s6yvg">
+            <div className="inner-header">
+              <a className="inner-header-text notranslate">
+                {post.username}
+              </a>
+            </div>
+          </header>
+            <div className="post-outside-container all-post-inside _22yr2">
+              <div className="post-inner-container all-post-inside">
                 <img src={post.image} className="post-image all-imgs"/>
               </div>
             </div>
@@ -43,7 +49,7 @@ class PostIndex extends React.Component {
 
 
     return (
-      <main className="main-post main-section">
+
       <section className="section-post column-holder">
       <div className="all-post">
         <h1>This is posts index</h1>
@@ -52,7 +58,7 @@ class PostIndex extends React.Component {
         </ul>
       </div>
     </section>
-  </main>
+
     );
   }
 }

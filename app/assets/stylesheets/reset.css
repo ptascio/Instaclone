@@ -28,7 +28,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background: #fafafa;;
+	background: #fafafa;
+	font-family: 'Heebo', sans-serif;
 }
 ol, ul {
 	list-style: none;
