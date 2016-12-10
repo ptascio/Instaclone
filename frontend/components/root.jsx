@@ -34,10 +34,12 @@ return (
       <Route path='/welcome' component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} >
         <Route path="/login" component={ SessionFormContainer } />
         <Route path="/signup" component={ SessionFormContainer } />
+
       </Route>
       <Route path="/" onEnter={_ensureLoggedIn} component={ App }>
         <IndexRoute component={PostIndexContainer}/>
         <Route path="/form" component={PostFormContainer} />
+        <Route path="/logout" component={ GreetingContainer } />
       </Route>
 
     </Router>

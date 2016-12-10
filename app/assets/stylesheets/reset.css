@@ -37,6 +37,10 @@ ol, ul {
 a {
 	text-decoration: none;
 }
+a:visited {
+	text-decoration: inherit;
+  color: inherit;
+}
 group::after {
 	content: "";
 	display: block;

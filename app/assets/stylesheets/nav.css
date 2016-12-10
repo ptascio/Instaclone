@@ -1,0 +1,122 @@
+.nav-container {
+  background: #fafafa;
+  padding: 0;
+  -webkit-box-ordinal-group: 2;
+  order: 1;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  position: relative;
+}
+
+.nav-first-layer {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.inner-nav {
+  -webkit-box-align: center;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #dbdbdb;
+  height: 77px;
+}
+
+.nav-info-container {
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  max-width: 1010px;
+  padding: 26px 40px;
+  width: 100%;
+}
+
+.nav-info-flex-style {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin: 0;
+  position: relative;
+}
+
+.all-info {
+  -webkit-box-flex: 1;
+  flex: 1 9999 0%;
+  min-width: 40px;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.img-container {
+  margin-right: 12px;
+  margin-top: -4px;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-logo {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.logo-text {
+  font-family: 'Lobster Two', cursive;
+  font-size: 46px;
+}
+
+.nav-functional {
+  align-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  flex: 1 0 0%;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.nav-functional-text {
+  padding-left: 0;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  white-space: nowrap;
+}
