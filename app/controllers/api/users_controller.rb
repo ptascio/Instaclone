@@ -15,6 +15,18 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def following
+    @user = User.find(params[:id])
+    @users = @user.following
+    render "api/users/following"
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers
+    render "api/users/followers"
+  end
+
   private
     def user_params
       params.require(:user).permit(:username, :email, :password)
