@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import { fetchPosts } from './actions/post_actions';
+import { fetchFollowers } from './actions/relationship_actions';
+window.fetchFollowers = fetchFollowers;
 
 window.fetchPosts = fetchPosts;
 

@@ -6,12 +6,14 @@ class User extends React.Component {
 
   constructor(props){
     super(props);
+
   }
 
   render() {
     return (
       <section>
-        <h3>Hello { this.props.currentUser.username}</h3>
+        <h3>Hello { this.props.currentUser.username }</h3>
+        <button>Follow</button>
       </section>
     );
   }

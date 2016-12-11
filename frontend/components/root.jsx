@@ -40,6 +40,7 @@ return (
         <IndexRoute component={PostIndexContainer}/>
         <Route path="/form" component={PostFormContainer} />
         <Route path="/logout" component={ GreetingContainer } />
+        <Route path="/user" component={ UserContainer } />
       </Route>
 
     </Router>
