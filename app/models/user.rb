@@ -65,8 +65,8 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    @posts = Post.where("user_id IN (?) OR user_id = ?", following_ids, id)
-    debugger
+    # @posts = Post.where("user_id IN (?) OR user_id = ?", following_ids, id)
+    # debugger
     # following_ids = "SELECT followed_id FROM relationships
     #                  WHERE  follower_id = :user_id"
     # Post.where("user_id IN (#{following_ids})

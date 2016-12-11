@@ -1,8 +1,10 @@
 class Api::PostsController < ApplicationController
 
   def index
-    @posts = Post.where(user: current_user).all.order(created_at: :desc
-
+    user_posts = Post.where(user: current_user).all.order(created_at: :desc)
+    followers_posts = Post.where(user: current_user.following).all.order(created_at: :desc)
+    #cheap fix?
+    @posts = user_posts + followers_posts
   end
 
   def show

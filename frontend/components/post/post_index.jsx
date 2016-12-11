@@ -23,12 +23,12 @@ class PostIndex extends React.Component {
   removePost(post) {
     this.props.destroyPost(post);
   }
-
+//kind of cheap way to make sure newest posts show up first
   render() {
-
-    const items = this.props.posts.map(function(post, index) {
+    const allposts = this.props.posts.reverse();
+    const items = allposts.map(function(post, index) {
       return (
-        <li key={index} className="li-spacing">
+        <li key={post.id} className="li-spacing">
           <article className="all-post post-holder">
 
           <header className="pieko _s6yvg header-container">
