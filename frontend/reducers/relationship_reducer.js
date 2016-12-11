@@ -4,10 +4,12 @@ import merge from 'lodash/merge';
 
 const relationshipReducer = (state = {}, action) => {
   Object.freeze(state);
-  let newState = {0: "hi"};
+  let newState = {};
   switch(action.type) {
     case RECEIVE_FOLLOWERS:
+    debugger
       action.followers.forEach(follower => newState[follower.id] = follower);
+      debugger
       return newState;
     case FOLLOW_USER:
       return state;
