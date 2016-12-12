@@ -16,7 +16,6 @@ class User extends React.Component {
 
   handleFollow(e){
     e.preventDefault();
-    debugger
     this.props.follow(this.props.params.username);
   }
 

@@ -28,7 +28,6 @@ const receiveFollowing = (following) => ({
 });
 
 export function follow(user){
-  debugger
   return (dispatch) => {
     return APIUtil.follow(user).then(
       (user) => dispatch(followUser(user))
@@ -37,7 +36,6 @@ export function follow(user){
 }
 
 export function unfollow(user){
-  debugger
   return (dispatch) => {
     return APIUtil.unfollow(user).then(
       (user) => dispatch(unfollowUser(user))

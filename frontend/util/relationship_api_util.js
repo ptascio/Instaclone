@@ -1,5 +1,4 @@
 export const follow = (username) => {
-  debugger
   return $.ajax({
     method: "POST",
     url: "api/relationships",
@@ -8,7 +7,6 @@ export const follow = (username) => {
 };
 
 export const unfollow = (user) => {
-  debugger
   return $.ajax({
     method: "DELETE",
     url: `api/relationships/${user}`
