@@ -7,13 +7,15 @@ import { fetchFollowing, fetchFollowers } from '../actions/relationship_actions'
 import { connect } from 'react-redux';
 
 class App extends React.Component {
-  constructor(props){
-    super(props);
-  }
+  // constructor(props){
+  //   super(props);
+  // }
   componentDidMount() {
     this.props.fetchFollowing(this.props.currentUser);
-    this.props.fetchFollowers(this.props.currentUser);
+    // this.props.fetchFollowers(this.props.currentUser);
   }
+
+
   render(){
     return (
       <section>
@@ -40,16 +42,19 @@ class App extends React.Component {
             </div>
           </div>
         </nav>
-
             { this.props.children }
       </section>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  currentUser: state.session.currentUser
-});
+const mapStateToProps = state => {
+  return {
+  currentUser: state.session.currentUser,
+  following: state.relationship.following,
+  followers: state.relationship.followers
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchFollowing: (currentUser) => dispatch(fetchFollowing(currentUser)),

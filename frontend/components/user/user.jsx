@@ -8,7 +8,6 @@ class User extends React.Component {
     super(props);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
-    debugger
   }
 
   componentDidMount() {
@@ -17,14 +16,17 @@ class User extends React.Component {
 
   handleFollow(e){
     e.preventDefault();
+    debugger
+    this.props.follow(this.props.params.username);
   }
 
   handleUnfollow(e){
     e.preventDefault();
+    this.props.unfollow(this.props.params.username);
   }
 
   render() {
-    let allFollowing = this.props.following;
+    const allFollowing = this.props.following;
     let isFollowing;
     if (allFollowing.hasOwnProperty(this.props.params.username)) {
       isFollowing = true;
@@ -32,18 +34,18 @@ class User extends React.Component {
       isFollowing = false;
     }
 
-    if (isFollowing) {
+    if (isFollowing === true) {
     return (
       <section>
         <h3 className="username">{ this.props.params.username }</h3>
-        <button>Unfollow</button>
+        <button onClick={this.handleUnfollow}>Unfollow</button>
       </section>
     );
     } else {
       return (
         <section>
           <h3 className="username">{ this.props.params.username }</h3>
-          <button>Follow</button>
+          <button onClick={this.handleFollow}>Follow</button>
         </section>
       );
     }

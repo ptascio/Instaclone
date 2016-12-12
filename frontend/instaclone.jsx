@@ -8,7 +8,7 @@ import { fetchFollowers } from './actions/relationship_actions';
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
   if (window.currentUser) {
-    const preloadedState = { session: { currentUser: window.currentUser, following: window.following } };
+    const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
 } else {
   store = configureStore();

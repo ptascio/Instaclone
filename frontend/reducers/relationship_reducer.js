@@ -7,19 +7,18 @@ let _nullRelationship = {
 };
 const relationshipReducer = (state = _nullRelationship, action) => {
   Object.freeze(state);
-  const newState = Object.assign({}, state);
+  const newState = merge({}, state);
 
   switch(action.type) {
     case RECEIVE_FOLLOWERS:
       action.followers.forEach(follower => newState["followers"][follower.username] = follower);
       return newState;
     case RECEIVE_FOLLOWING:
-      
       action.following.forEach(follow => newState["following"][follow.username] = follow);
       return newState;
     case FOLLOW_USER:
-      // action.following.forEach(follow => newState[follow.id] = follow);
-      // newState[action.user.id] = action.user;
+      action.following.forEach(follow => newState["following"][follow.id] = follow);
+      newState[action.user.id] = action.user;
       return newState;
     case UNFOLLOW_USER:
       // action.following.forEach(follow => newState[follow.id] = follow);
