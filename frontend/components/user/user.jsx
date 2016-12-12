@@ -8,6 +8,7 @@ class User extends React.Component {
     super(props);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
+    debugger
   }
 
   componentDidMount() {
@@ -23,13 +24,29 @@ class User extends React.Component {
   }
 
   render() {
+    let allFollowing = this.props.following;
+    let isFollowing;
+    if (allFollowing.hasOwnProperty(this.props.params.username)) {
+      isFollowing = true;
+    } else {
+      isFollowing = false;
+    }
+
+    if (isFollowing) {
     return (
       <section>
         <h3 className="username">{ this.props.params.username }</h3>
-        <button>Follow</button>
-        <p>{ name }</p>
+        <button>Unfollow</button>
       </section>
     );
+    } else {
+      return (
+        <section>
+          <h3 className="username">{ this.props.params.username }</h3>
+          <button>Follow</button>
+        </section>
+      );
+    }
   }
 }
 
