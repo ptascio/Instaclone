@@ -9,6 +9,14 @@ class User extends React.Component {
 
   }
 
+  componentDidMount() {
+    this.props.fetchUser(this.props.params.username);
+  }
+
+  // routeIsCorrect() {
+  //   return parseInt(this.props.userId)
+  // }
+
   render() {
     return (
       <section>

@@ -7,11 +7,9 @@ const relationshipReducer = (state = {}, action) => {
   let newState = {};
   switch(action.type) {
     case RECEIVE_FOLLOWERS:
-    debugger
       action.followers.forEach(follower => newState[follower.id] = follower);
       return newState;
     case RECEIVE_FOLLOWING:
-    debugger
       action.following.forEach(follow => newState[follow.id] = follow);
       return newState;
     case FOLLOW_USER:
