@@ -27,9 +27,9 @@ class App extends React.Component {
                   <div className="searchBar">
                   </div>
                   <div className="nav-functional">
-                    <div className="nav-function-text">
-                      <a href="/#/form"><span>Post</span></a><br />
-                      <a href="/#/logout"><span>Logout</span></a>
+                    <div className="nav-functional-text">
+                      <a href="/#/form"><span className="link-items">Post</span></a><br />
+                      <a href="/#/logout"><span className="link-items">Logout</span></a>
                     </div>
                   </div>
                 </div>

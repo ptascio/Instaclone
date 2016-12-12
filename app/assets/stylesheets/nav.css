@@ -47,6 +47,7 @@
   max-width: 1010px;
   padding: 26px 40px;
   width: 100%;
+  position: relative;;
 }
 
 .nav-info-flex-style {
@@ -86,6 +87,7 @@
   display: block;
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
 }
 
 .logo-text {
@@ -109,7 +111,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  position: relative;
+  position: absolute;
+  margin-left: 500px;
 }
 
 .nav-functional-text {
@@ -119,4 +122,13 @@
   -webkit-box-direction: normal;
   flex-direction: row;
   white-space: nowrap;
+}
+
+.link-items {
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.feed {
+  margin-top: 26px;
 }

@@ -84,8 +84,7 @@ class PostIndex extends React.Component {
 
       <section className="section-post column-holder">
       <div className="all-post">
-        <h1>This is posts index</h1>
-        <ul>
+        <ul className="feed">
           { items }
         </ul>
       </div>
