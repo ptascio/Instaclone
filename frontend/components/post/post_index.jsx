@@ -28,7 +28,7 @@ class PostIndex extends React.Component {
     const allposts = this.props.posts.reverse();
     const items = allposts.map(function(post, index) {
       return (
-        <li key={post.id} className="li-spacing">
+        <li key={index} className="li-spacing">
           <article className="all-post post-holder">
 
           <header className="pieko _s6yvg header-container">

@@ -33,7 +33,7 @@ class SessionForm extends React.Component{
   logInAsGuest(e){
     e.preventDefault();
     const guestUser = {
-      username: "Guest User",
+      username: "GuestUser",
       email: "guest@email.com",
       password: "123456"
     };
