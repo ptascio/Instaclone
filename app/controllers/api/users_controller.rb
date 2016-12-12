@@ -17,13 +17,13 @@ class Api::UsersController < ApplicationController
   end
 
   def following
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:username])
     @users = @user.following
     render "api/users/following"
   end
 
   def followers
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:username])
     @followers = @user.followers
     render "api/users/followers"
   end

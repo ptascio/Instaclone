@@ -3,14 +3,17 @@ import SessionFormContainer from './session/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import PostFormContainer from './post/post_form_container';
 import PostIndex from './post/post_index';
-
-//pass all props
+import { fetchFollowing, fetchFollowers } from '../actions/relationship_actions';
+import { connect } from 'react-redux';
 
 class App extends React.Component {
   constructor(props){
     super(props);
   }
-
+  componentDidMount() {
+    this.props.fetchFollowing(this.props.currentUser);
+    this.props.fetchFollowers(this.props.currentUser);
+  }
   render(){
     return (
       <section>
@@ -44,7 +47,13 @@ class App extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  currentUser: state.session.currentUser
+});
 
+const mapDispatchToProps = dispatch => ({
+  fetchFollowing: (currentUser) => dispatch(fetchFollowing(currentUser)),
+  fetchFollowers: (currentUser) => dispatch(fetchFollowers(currentUser))
+});
 
-
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

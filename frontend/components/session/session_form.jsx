@@ -40,6 +40,7 @@ class SessionForm extends React.Component{
     this.props.login(guestUser).then(() => this.props.router.push("/"));
   }
 
+
   render() {
     const link = (this.props.formType === 'login' ? 'signup' : 'login');
     const errors = this.props.errors;

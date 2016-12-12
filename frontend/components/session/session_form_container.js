@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
 import { login, signup } from '../../actions/session_actions';
+import { fetchFollowing } from '../../actions/relationship_actions';
 
 //does loggedIn work?
 const mapStateToProps = (state) => {
@@ -8,6 +9,7 @@ const mapStateToProps = (state) => {
   return {
     loggedIn: Boolean(state.session.currentUser),
     currentUser: state.session.currentUser,
+    following: state.session.following,
     errors: state.session.errors
   };
 };
@@ -24,7 +26,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     formType,
     processForm: (user) => dispatch(processForm(user)),
-    login: (user) => dispatch(login(user)) 
+    login: (user) => dispatch(login(user))
   };
 };
 

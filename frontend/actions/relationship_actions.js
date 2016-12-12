@@ -5,13 +5,16 @@ export const RECEIVE_FOLLOWING = "RECEIVE_FOLLOWING";
 
 import * as APIUtil from '../util/relationship_api_util';
 
-export const followUser = () => ({
-  type: FOLLOW_USER
+export const followUser = (user, following) => ({
+  type: FOLLOW_USER,
+  user,
+  following
 });
 
-export const unfollowUser = (user) => ({
+export const unfollowUser = (user, following) => ({
   type: UNFOLLOW_USER,
-  user
+  user,
+  following
 });
 
 const receiveFollowers = (followers) => ({

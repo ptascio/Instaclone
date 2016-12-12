@@ -15,14 +15,14 @@ export const unfollow = (user) => {
 
 export const fetchFollowers = (currentUser) => {
   return $.ajax({
-    url: `/api/users/${currentUser.id}/followers`,
+    url: `/api/users/${currentUser.username}/followers`,
     method: "GET"
   });
 };
 
 export const fetchFollowing = (currentUser) => {
   return $.ajax({
-    url: `api/users/${currentUser.id}/following`,
+    url: `api/users/${currentUser.username}/following`,
     method: "GET"
   });
 };
