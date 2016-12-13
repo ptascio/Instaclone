@@ -69,9 +69,9 @@ class PostIndex extends React.Component {
                 </li>
               </ul>
               <section className="add-comment">
-                <a className="heart-container">
-                  <i className="fa fa-heart-o"></i>
-                  
+                <a className="heart-container like-post">
+                  <i className="fa fa-heart" ></i>
+
                 </a>
                   <CommentContainer postId={post.id}/>
               </section>
