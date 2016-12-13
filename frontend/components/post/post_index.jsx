@@ -70,10 +70,10 @@ class PostIndex extends React.Component {
               </ul>
               <section className="add-comment">
                 <a className="heart-container">
-                  <span className="heart-toggle">
-                    <CommentContainer postId={post.id}/>
-                  </span>
+                  <i className="fa fa-heart-o"></i>
+                  
                 </a>
+                  <CommentContainer postId={post.id}/>
               </section>
             </div>
           <button onClick={() => this.removePost(post)} className="edit-options">Delete</button>
