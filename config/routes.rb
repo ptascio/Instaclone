@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy, :show]
     resources :posts, only: [:index, :show, :new, :create, :destroy]
-    resources :comments, only: [:show, :create, :destroy]
+    resources :comments, only: [:show, :create, :destroy, :index]
     resources :relationships, param: :username, only: [:create, :destroy]
   end
 end

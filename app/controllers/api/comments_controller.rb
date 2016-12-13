@@ -1,6 +1,12 @@
 class Api::CommentsController < ApplicationController
   before_action :logged_in?
 
+
+  def index
+    @comments = Comment.all
+    render "api/comments/index"
+  end
+
   def create
     @comment = current_user.comments.new(comment_params)
     @comment.post_id = self.params["comment"]["postId"].to_i

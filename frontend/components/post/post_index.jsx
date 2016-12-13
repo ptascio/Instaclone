@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import TimeAgo from 'react-timeago';
 import CommentContainer from '../comment/comment_container';
+import CommentIndexContainer from '../comment/comment_index_container';
 
 
 class PostIndex extends React.Component {
@@ -55,6 +56,7 @@ class PostIndex extends React.Component {
                 <div className="likes-text-container likes-text-container-flex-style">
                   <span className="likes-text">LIKES</span>
                 </div>
+                <CommentIndexContainer postId={post.id}/>
               </section>
               <ul className="caption-container">
                 <li className="caption-li">
