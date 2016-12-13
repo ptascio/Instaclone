@@ -4,16 +4,22 @@ class Comment extends React.Component{
   constructor(props) {
     super(props);
 
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+
     this.state = {
       body: "",
-      username: this.props.currentUser.username
+      username: this.props.currentUser.username,
+      postId: this.props.postId
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const comment = Object.assign({}, this.state);
-    this.props.makeComment(this.state.comment);
+    this.props.makeComment(comment).then(
+      () => this.setState({ body: ""})
+    );
   }
 
   handleChange(field){
@@ -25,11 +31,12 @@ class Comment extends React.Component{
   render() {
     return (
     <section>
-      <form>
+      <form className="comment-container" onSubmit={this.handleSubmit}>
         <input type="text"
           value={ this.state.body }
           placeholder="Add a Comment..."
-          onChange={ this.handleChange("username")} />
+          onChange={ this.handleChange("body")}
+          className="comment-input" />
       </form>
     </section>
   );

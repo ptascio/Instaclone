@@ -7,9 +7,9 @@ import commentReducer from './comment_reducer';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  post :postReducer,
-  relationship :relationshipReducer,
-  comment :commentReducer
+  post: postReducer,
+  relationship: relationshipReducer,
+  comment: commentReducer
 });
 
 export default rootReducer;

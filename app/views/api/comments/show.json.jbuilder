@@ -2,8 +2,9 @@
 #   comment.id
 # end
 
-json.array! @comments do |comment|
-  json.postId comment.post_id
-  json.body comment.body
-  json.username comment.user_id.username
-end
+
+  json.postId @comment.post_id
+  json.body @comment.body
+  json.userId @comment.user_id
+  json.id @comment.id
+    debugger

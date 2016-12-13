@@ -67,9 +67,7 @@ class PostIndex extends React.Component {
               <section className="add-comment">
                 <a className="heart-container">
                   <span className="heart-toggle">
-                    <form className="comment-container">
-                      <input className="comment-input" type="text" placeholder="Add A Comment..."></input>
-                    </form>
+                    <CommentContainer postId={post.id}/>
                   </span>
                 </a>
               </section>

@@ -18,3 +18,7 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Comment);
+
+// <form className="comment-container">
+//   <input className="comment-input" type="text" placeholder="Add A Comment..."></input>
+// </form>

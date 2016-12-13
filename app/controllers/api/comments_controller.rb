@@ -3,7 +3,7 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.new(comment_params)
-    debugger
+    @comment.post_id = self.params["comment"]["postId"].to_i
     if @comment.save
       render "api/comments/show"
     end
@@ -13,8 +13,12 @@ class Api::CommentsController < ApplicationController
   end
 
   def show
-    post = Post.find(params[:id])
-    @comments = post.comments.all
+    # debugger
+    # post = Post.find(params[:id])
+    # @comments = post.comments.all
+
+    @comment = Comment.find(params[:id])
+    @user = User.find(params[@comment.user_id])
   end
 
   private
