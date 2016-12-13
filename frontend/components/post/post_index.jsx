@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import TimeAgo from 'react-timeago';
+import CommentContainer from '../comment/comment_container';
 
 
 class PostIndex extends React.Component {
