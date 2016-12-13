@@ -92,7 +92,7 @@
   <tr>
   <tr>
     <td>user_id</td>
-    <td>string</td>
+    <td>integer</td>
     <td>not null, foreign key</td>
   <tr>
 </table>

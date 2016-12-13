@@ -5,8 +5,6 @@
 #  id              :integer          not null, primary key
 #  username        :string           not null
 #  email           :string           not null
-#  followers       :integer          default(0)
-#  following       :integer          default(0)
 #  password_digest :string           not null
 #  session_token   :string           not null
 #
@@ -22,6 +20,11 @@ class User < ActiveRecord::Base
     class_name: "Post",
     foreign_key: :user_id,
     primary_key: :id
+
+  has_many :comments,
+    class_name: "Comment",
+    foreign_key: :user_id,
+    dependent: :destroy
 
   has_many :active_relationships,
     class_name: "Relationship",
