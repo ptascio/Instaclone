@@ -14,11 +14,7 @@ class CommentIndex extends React.Component{
     this.props.fetchComments();
   }
 
-  componentWillReceiveProps(nextProps){
-    if(this.props.allComments !== nextProps.allComments){
-      this.props.fetchComments();
-    }
-  }
+
 
   removeComment(comment) {
     this.props.destroyComment(comment);
@@ -27,10 +23,11 @@ class CommentIndex extends React.Component{
   render() {
     let reverseComments = this.props.comments.reverse();
     const postComments = reverseComments.map(function(comment) {
+        let userUrl = `/users/${comment.username}`;
       return (
         <li key={comment.id}>
-          {comment.username}
-          {comment.body}
+          <Link to={ userUrl }>{comment.username}</Link>
+          <span>{comment.body}</span>
         <button onClick={() => this.removeComment(comment)}>Delete</button>
         </li>
       );

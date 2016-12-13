@@ -30,6 +30,7 @@ class PostIndex extends React.Component {
   render() {
     const allposts = this.props.posts.reverse();
     const items = allposts.map(function(post, index) {
+      let userUrl = `/users/${post.username}`;
       return (
         <li key={index} className="li-spacing">
           <article className="all-post post-holder">
@@ -39,9 +40,9 @@ class PostIndex extends React.Component {
               <img src={post.image} className="header-img"/>
             </a>
             <div className="inner-header">
-              <a className="inner-header-text">
+              <Link to={ userUrl }>
                 {post.username}
-              </a>
+              </Link>
             </div>
             <time className="time-container">
               <TimeAgo date={post.created_at} />

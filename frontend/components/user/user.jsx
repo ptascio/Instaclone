@@ -32,23 +32,28 @@ class User extends React.Component {
     } else {
       isFollowing = false;
     }
-
-    if (isFollowing === true) {
-    return (
-      <section>
-        <h3 className="username">{ this.props.params.username }</h3>
-        <button onClick={this.handleUnfollow}>Unfollow</button>
-      </section>
-    );
-    } else {
+    if (this.props.currentUser.username !== this.props.params.username){
+      if (isFollowing === true) {
       return (
         <section>
           <h3 className="username">{ this.props.params.username }</h3>
-          <button onClick={this.handleFollow}>Follow</button>
+          <button onClick={this.handleUnfollow}>Unfollow</button>
         </section>
       );
+      } else {
+        return (
+          <section>
+            <h3 className="username">{ this.props.params.username }</h3>
+            <button onClick={this.handleFollow}>Follow</button>
+          </section>
+        );
+      }
+    } else {
+      return (
+        <h3 className="username">{ this.props.params.username }</h3>
+      );
     }
-  }
+}
 }
 
 //bootstrap following upon log in
