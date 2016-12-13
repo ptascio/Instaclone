@@ -1,4 +1,14 @@
-.fa-heart {
+.like-post i:hover:before{
+  content: "\f004";
+  color: red
+}
+
+/*.fa-heart {
   content: "\f08a";
   color: #f00;
 }
+
+.fa-heart > i:hover:before{
+  content: "\f08a";
+  color: #000;
+}*/
