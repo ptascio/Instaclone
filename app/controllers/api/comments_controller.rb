@@ -2,6 +2,11 @@ class CommentsController < ApplicationController
   before_action :logged_in?
 
   def create
+    @comment = current_user.comments.new(comment_params)
+
+    if @comment.save
+      render "api/comments/show"
+    end
   end
 
   def destroy
@@ -9,7 +14,12 @@ class CommentsController < ApplicationController
 
   def show
     post = Post.find(params[:id])
-    @comments = post.comments.all 
+    @comments = post.comments.all
   end
+
+  private
+    def comment_params
+      params.require(:comment).permit(:body)
+    end
 
 end
