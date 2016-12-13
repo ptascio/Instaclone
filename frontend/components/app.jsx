@@ -12,7 +12,7 @@ class App extends React.Component {
   // }
   componentDidMount() {
     this.props.fetchFollowing(this.props.currentUser);
-    // this.props.fetchFollowers(this.props.currentUser);
+    this.props.fetchFollowers(this.props.currentUser);
   }
 
 

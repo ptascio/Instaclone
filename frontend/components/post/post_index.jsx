@@ -17,7 +17,8 @@ class PostIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    if(this.props.posts.length !== nextProps.posts.length){
+    if(this.props.posts.length !== nextProps.posts.length ||
+      this.props.allComments.length !== nextProps.allComments.length){
       this.props.fetchPosts();
     }
   }

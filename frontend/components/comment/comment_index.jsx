@@ -7,6 +7,7 @@ class CommentIndex extends React.Component{
     this.state = {
       postId: this.props.postId
     };
+    this.removeComment = this.removeComment.bind(this);
   }
 
   componentDidMount() {
@@ -14,8 +15,7 @@ class CommentIndex extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
-  debugger
-    if(this.props.comments.length !== nextProps.comments.length){
+    if(this.props.allComments !== nextProps.allComments){
       this.props.fetchComments();
     }
   }
