@@ -5,4 +5,5 @@ json.array! @posts do |post|
   json.image asset_path(post.image.url)
   json.caption post.caption
   json.created_at post.created_at
+  json.comments post.comments
 end

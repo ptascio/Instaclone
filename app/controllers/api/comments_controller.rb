@@ -1,9 +1,9 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
   before_action :logged_in?
 
   def create
     @comment = current_user.comments.new(comment_params)
-
+    debugger
     if @comment.save
       render "api/comments/show"
     end
