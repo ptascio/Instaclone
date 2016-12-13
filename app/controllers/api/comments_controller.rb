@@ -17,6 +17,11 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = current_user.comments.find(params[:id])
+    if current_user.id == @comment.user_id
+      @comment.destroy
+      render "api/comments/show"
+    end
   end
 
   def show
