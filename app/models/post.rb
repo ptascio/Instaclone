@@ -24,6 +24,11 @@ class Post < ActiveRecord::Base
       foreign_key: :user_id,
       primary_key: :id
 
+  has_many :likes
+  has_many :user_likes,
+    through: :likes,
+    source:  :user
+
   has_many :comments,
     class_name: "Comment",
     foreign_key: :post_id,
