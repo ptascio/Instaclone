@@ -28,6 +28,7 @@ export function createLike(post) {
 }
 
 export function destroyLike(post) {
+  debugger
   return(dispatch) => {
     return APIUtil.destroyLike(post).then(
       (post) => dispatch(receiveUnlike(post))

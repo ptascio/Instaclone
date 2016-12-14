@@ -12,6 +12,7 @@ const likeReducer = (state = {}, action) => {
     case RECEIVE_LIKE:
       return state;
     case RECEIVE_UNLIKE:
+      newState = merge({}, state);
       return state;
     default:
       return state;

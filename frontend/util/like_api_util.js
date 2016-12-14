@@ -7,8 +7,9 @@ export const createLike = (post) => {
 };
 
 export const destroyLike = (post) => {
+  debugger
   return $.ajax({
-    url: `api/likes/${post.id}`,
+    url: `api/likes/${post}`,
     method: "DELETE"
   });
 };
