@@ -7,12 +7,15 @@ const likeReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_ALL_LIKES:
       newState = {};
-      action.likes.forEach(like => newState[like.id] = like);
+      action.likes.forEach(like => newState[like.userId] = like);
       return newState;
     case RECEIVE_LIKE:
       return state;
     case RECEIVE_UNLIKE:
       newState = merge({}, state);
+      debugger
+      delete newState[action.post.userId];
+      debugger
       return state;
     default:
       return state;

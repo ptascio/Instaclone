@@ -25,7 +25,7 @@ class Api::LikesController < ApplicationController
       user_id: current_user.id,
       post_id: self.params["id"].to_i
     )
-    debugger
+  
 
     if(@like.destroy)
       render "api/likes/show", status: 200
