@@ -17,7 +17,6 @@ class Like extends React.Component {
   }
 
   toggleLike() {
-    debugger
     if (this.state.liked){
       this.props.destroyLike(this.props.postId);
       this.setState({

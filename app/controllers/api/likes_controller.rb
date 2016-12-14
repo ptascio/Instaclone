@@ -7,7 +7,7 @@ class Api::LikesController < ApplicationController
   def create
     @like = Like.new(
       user_id: current_user.id,
-      post_id: like_params[:post_id]
+      post_id: self.params["post"].to_i
     )
 
     if (@like.save)
@@ -25,7 +25,7 @@ class Api::LikesController < ApplicationController
       user_id: current_user.id,
       post_id: self.params["id"].to_i
     )
-  
+
 
     if(@like.destroy)
       render "api/likes/show", status: 200
