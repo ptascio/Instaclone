@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
       foreign_key: :user_id,
       primary_key: :id
 
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :user_likes,
     through: :likes,
     source:  :user

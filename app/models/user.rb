@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
 
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :liked_posts,
     through: :likes,
     source:  :post

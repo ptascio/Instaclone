@@ -33,11 +33,16 @@ class PostIndex extends React.Component {
 
     const allposts = this.props.posts.reverse();
     const items = allposts.map(function(post, index) {
+      let likesCount;
+      if (post.likes){
+        likesCount = post.likes.length;
+      } else {
+        likesCount = 0;
+      }
       let userUrl = `/users/${post.username}`;
       return (
         <li key={index} className="li-spacing">
           <article className="all-post post-holder">
-
           <header className="pieko _s6yvg header-container">
             <a className="header-img-container">
               <img src={post.image} className="header-img"/>
@@ -59,7 +64,7 @@ class PostIndex extends React.Component {
             <div className="info-container">
               <section className="likes-container likes-container-flex-style">
                 <div className="likes-text-container likes-text-container-flex-style">
-                  <span className="likes-text">{post.likes.length} likes</span>
+                  <span className="likes-text">{ likesCount } likes</span>
                 </div>
                 <CommentIndexContainer postId={post.id}/>
               </section>
