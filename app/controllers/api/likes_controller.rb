@@ -1,5 +1,9 @@
 class Api::LikesController < ApplicationController
 
+  def index
+    @likes = Like.all
+  end
+
   def create
     @like = Like.new(
       user_id: current_user.id,
