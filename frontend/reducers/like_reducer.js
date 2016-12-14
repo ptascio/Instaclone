@@ -11,11 +11,11 @@ const likeReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_LIKE:
       newState = merge({}, state);
-      newState[action.post.userId] = action.post;
+      newState[action.post.id] = action.post;
       return newState;
     case RECEIVE_UNLIKE:
       newState = merge({}, state);
-      delete newState[action.post.userId];
+      delete newState[action.post.id];
       return newState;
     default:
       return state;

@@ -9,7 +9,6 @@ class Api::LikesController < ApplicationController
       user_id: current_user.id,
       post_id: self.params["post"].to_i
     )
-
     if (@like.save)
       render "api/likes/show", status: 200
     else
@@ -20,7 +19,6 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-
     @like = Like.find_by(
       user_id: current_user.id,
       post_id: self.params["id"].to_i
