@@ -20,7 +20,7 @@ class PostIndex extends React.Component {
   componentWillReceiveProps(nextProps){
     if(this.props.posts.length !== nextProps.posts.length ||
       this.props.allComments.length !== nextProps.allComments.length ||
-    this.props.allLikes.length !== nextProps.allLikes.length){
+      this.props.allLikes.length !== nextProps.allLikes.length) {
       this.props.fetchPosts();
     }
   }
@@ -30,6 +30,7 @@ class PostIndex extends React.Component {
   }
 //kind of cheap way to make sure newest posts show up first
   render() {
+
     const allposts = this.props.posts.reverse();
     const items = allposts.map(function(post, index) {
       let userUrl = `/users/${post.username}`;
@@ -58,7 +59,7 @@ class PostIndex extends React.Component {
             <div className="info-container">
               <section className="likes-container likes-container-flex-style">
                 <div className="likes-text-container likes-text-container-flex-style">
-                  <span className="likes-text">LIKES</span>
+                  <span className="likes-text">{post.likes.length} likes</span>
                 </div>
                 <CommentIndexContainer postId={post.id}/>
               </section>
