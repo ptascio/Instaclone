@@ -1,7 +1,8 @@
-.like-post i:hover:before{
+.fa-heart {
   content: "\f004";
   color: red
 }
+
 
 /*.fa-heart {
   content: "\f08a";

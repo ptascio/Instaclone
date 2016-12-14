@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import TimeAgo from 'react-timeago';
 import CommentContainer from '../comment/comment_container';
 import CommentIndexContainer from '../comment/comment_index_container';
+import LikeContainer from '../like/like_container';
 
 
 class PostIndex extends React.Component {
@@ -69,10 +70,7 @@ class PostIndex extends React.Component {
                 </li>
               </ul>
               <section className="add-comment">
-                <a className="heart-container like-post">
-                  <i className="fa fa-heart-o" ></i>
-
-                </a>
+                  <LikeContainer postId={post.id}/>
                   <CommentContainer postId={post.id}/>
               </section>
             </div>
