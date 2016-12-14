@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import { fetchPosts, destroyPost } from '../../actions/post_actions';
-import { selectAllPosts, selectAllComments } from '../../reducers/selectors';
+import { selectAllPosts, selectAllComments, selectAllLikes } from '../../reducers/selectors';
 
 
 const mapStateToProps = state => {
   return {
     posts: selectAllPosts(state),
-    allComments: selectAllComments(state)
+    allComments: selectAllComments(state),
+    allLikes: selectAllLikes(state)
   };
 };
 

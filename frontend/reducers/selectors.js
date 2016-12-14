@@ -6,3 +6,7 @@ export function selectAllPosts(state) {
 export function selectAllComments(state) {
   return Object.values(state.comment);
 }
+
+export function selectAllLikes(state) {
+  return Object.values(state.like);
+}
