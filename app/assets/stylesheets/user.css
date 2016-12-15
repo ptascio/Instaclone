@@ -1,22 +1,73 @@
+.user-header {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-shrink: 0;
+  margin: 0;
+  position: relative;
+}
+
 .user-info-container {
-  float: right;
-  width: 50%;
+  flex-direction: row;
+  flex-shrink: 1;
+  min-width: 0;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  color: #262626;
 }
 
 
 .username {
   font-size: 24px;
-  margin: 10px;
+  line-height: 40px;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
+  vertical-align: baseline;
   float: left;
+  height: 40px;
 }
 
 .user-img-container {
+  flex-shrink: 0;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.button-wrapper {
+  flex-shrink: 0;
+  margin-left: 20px;
+  display: flex;
+  height: 30px;
+}
+.user-img-style {
   background-color: #fafafa;
   border-radius: 50%;
   overflow: hidden;
   height: 152px;
   width: 152px;
-  float: left;
   margin: 50px;
 }
 
@@ -33,9 +84,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 40%;
-  -webkit-appearance: none;
+  width: 100%;
   float: right;
+  -webkit-appearance: none;
+  padding: 0 11px;
+  line-height: 29px;
   font-size: 16px;
 }
 
@@ -52,7 +105,25 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 20%;
-  -webkit-appearance: none;
+  width: 100%;
   float: right;
+  -webkit-appearance: none;
+  padding: 0 11px;
+  line-height: 29px;
+  font-size: 16px;
+}
+
+.user-stats {
+  margin-top: 70px;
+  margin-bottom: 20px;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+}
+
+.user-stats-li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  -webkit-box-direction: normal;
 }

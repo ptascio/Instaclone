@@ -42,7 +42,7 @@ class User extends React.Component {
 
     let profilePic;
     if (this.props.userPage[this.props.params.username]){
-      profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-container" />;
+      profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-style" />;
     } else {
       profilePic = <div></div>;
     }
@@ -50,29 +50,46 @@ class User extends React.Component {
     if (this.props.currentUser.username !== this.props.params.username){
       if (isFollowing === true) {
       return (
-        <section>
+        <header className="user-header group">
+          <div className="user-img-container">
+            { profilePic }
+          </div>
           <div className="user-info-container">
           <h3 className="username group">{ this.props.params.username }</h3>
+          <span className="button-wrapper">
             <button onClick={this.handleUnfollow} className="following-button group">Following</button>
-            </div>
-            { profilePic }
-        </section>
+            </span>
+
+            <ul className="user-stats">
+              <li>
+                <span>
+                  posts
+                </span>
+              </li>
+              <li>
+                <span>
+                  followers
+                </span>
+              </li>
+            </ul>
+          </div>
+        </header>
       );
       } else {
         return (
-          <section>
+          <header>
             <h3 className="username">{ this.props.params.username }</h3>
               { profilePic }
             <button onClick={this.handleFollow} className="follow-button">Follow</button>
-          </section>
+          </header>
         );
       }
     } else {
       return (
-        <section>
+        <header>
           <h3 className="username">{ this.props.params.username }</h3>
           { profilePic }
-        </section>
+        </header>
       );
     }
 }
