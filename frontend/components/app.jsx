@@ -19,7 +19,8 @@ class App extends React.Component {
   }
 
   signOut() {
-    this.props.logout().then(this.props.router.push("/#/welcome"));
+    this.props.logout();
+    this.props.router.push("/#/welcome");
   }
 
 
