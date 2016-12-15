@@ -15,7 +15,9 @@ class User extends React.Component {
   }
 //messed with this here so come here first if something breaks
   componentWillReceiveProps(nextProps){
-    if(this.props !== nextProps) {
+    if(this.props.params.username !== nextProps.params.username ||
+      this.props.following !== nextProps.following
+    ) {
       this.props.fetchUser(nextProps.params.username);
     }
   }
@@ -86,8 +88,6 @@ class User extends React.Component {
       );
 }
 }
-
-//bootstrap following upon log in
 
 
 export default withRouter(User);
