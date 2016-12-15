@@ -5,14 +5,21 @@ import PostFormContainer from './post/post_form_container';
 import PostIndex from './post/post_index';
 import { fetchFollowing, fetchFollowers } from '../actions/relationship_actions';
 import { connect } from 'react-redux';
+import { logout } from '../actions/session_actions';
+import { withRouter } from 'react-router';
 
 class App extends React.Component {
-  // constructor(props){
-  //   super(props);
-  // }
+  constructor(props){
+    super(props);
+    this.signOut = this.signOut.bind(this);
+  }
   componentDidMount() {
     this.props.fetchFollowing(this.props.currentUser);
     this.props.fetchFollowers(this.props.currentUser);
+  }
+
+  signOut() {
+    this.props.logout().then(this.props.router.push("/#/welcome"));
   }
 
 
@@ -34,7 +41,7 @@ class App extends React.Component {
                   <div className="nav-functional">
                     <div className="nav-functional-text">
                       <a href="/#/form"><span className="link-items">Post</span></a><br />
-                      <a href="/#/logout"><span className="link-items">Logout</span></a>
+                      <a href="" onClick={this.signOut}><span className="link-items">Logout</span></a>
                     </div>
                   </div>
                 </div>
@@ -58,7 +65,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchFollowing: (currentUser) => dispatch(fetchFollowing(currentUser)),
-  fetchFollowers: (currentUser) => dispatch(fetchFollowers(currentUser))
+  fetchFollowers: (currentUser) => dispatch(fetchFollowers(currentUser)),
+  logout: () => dispatch(logout()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
