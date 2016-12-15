@@ -88,6 +88,7 @@
   overflow: hidden;
   white-space: nowrap;
   position: relative;
+  width: 200px;
 }
 
 .logo-text {
