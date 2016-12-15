@@ -13,9 +13,9 @@ class User extends React.Component {
   componentDidMount() {
     this.props.fetchUser(this.props.params.username);
   }
-
+//messed with this here so come here first if something breaks
   componentWillReceiveProps(nextProps){
-    if(this.props.params !== nextProps.params) {
+    if(this.props !== nextProps) {
       this.props.fetchUser(nextProps.params.username);
     }
   }
@@ -31,24 +31,35 @@ class User extends React.Component {
   }
 
   render() {
-
     const allFollowing = this.props.following;
-    let isFollowing;
-    if (allFollowing.hasOwnProperty(this.props.params.username)) {
-      isFollowing = true;
-    } else {
-      isFollowing = false;
+    let button;
+    if (this.props.currentUser.username !== this.props.params.username){
+      if (allFollowing.hasOwnProperty(this.props.params.username)) {
+        button = <button onClick={this.handleUnfollow} className="following-button group">Following</button>
+      } else {
+        button = <button onClick={this.handleFollow} className="follow-button group">Follow</button>
+      }
+    }else {
+      button = <div></div>;
     }
 
     let profilePic;
+    let posts;
+    let followers;
+    let following;
+
     if (this.props.userPage[this.props.params.username]){
       profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-style" />;
+      followers = <span>{this.props.userPage[this.props.params.username].followers.length}followers</span>;
+      following = <span>{this.props.userPage[this.props.params.username].following.length}following</span>;
+      posts = <span>{this.props.userPage[this.props.params.username].posts.length}posts</span>;
     } else {
       profilePic = <div></div>;
+      followers = <span></span>;
+      following = <span></span>;
+      posts = <span></span>;
     }
 
-    if (this.props.currentUser.username !== this.props.params.username){
-      if (isFollowing === true) {
       return (
         <header className="user-header group">
           <div className="user-img-container">
@@ -57,41 +68,22 @@ class User extends React.Component {
           <div className="user-info-container">
           <h3 className="username group">{ this.props.params.username }</h3>
           <span className="button-wrapper">
-            <button onClick={this.handleUnfollow} className="following-button group">Following</button>
+            { button }
             </span>
-
             <ul className="user-stats">
-              <li>
-                <span>
-                  posts
-                </span>
+              <li className="user-stats-li">
+                { posts }
               </li>
-              <li>
-                <span>
-                  followers
-                </span>
+              <li className="user-stats-li">
+                { followers }
+              </li>
+              <li className="user-stats-li">
+                  { following }
               </li>
             </ul>
           </div>
         </header>
       );
-      } else {
-        return (
-          <header>
-            <h3 className="username">{ this.props.params.username }</h3>
-              { profilePic }
-            <button onClick={this.handleFollow} className="follow-button">Follow</button>
-          </header>
-        );
-      }
-    } else {
-      return (
-        <header>
-          <h3 className="username">{ this.props.params.username }</h3>
-          { profilePic }
-        </header>
-      );
-    }
 }
 }
 

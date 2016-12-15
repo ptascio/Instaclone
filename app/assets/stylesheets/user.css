@@ -120,10 +120,15 @@
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-direction: row;
+  height: 40px;
+  position: absolute;
 }
 
 .user-stats-li {
   display: list-item;
   text-align: -webkit-match-parent;
   -webkit-box-direction: normal;
+  height: 15px;
+  float: left;
+  margin-right: 40px;
 }
