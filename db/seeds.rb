@@ -20,14 +20,14 @@ Post.create!({
   user_id: 1,
   image: File.new("#{Rails.root}/app/assets/images/niksband.jpg"),
   caption: "Listening to music...",
-  created_at: "2016-12-15 10:43:42"
+  created_at: "2016-12-10 12:43:42"
   })
 Post.create!({
   id: 2,
   user_id: 2,
   image: File.new("#{Rails.root}/app/assets/images/haircut.jpg"),
   caption: "need a haircut don't I?",
-  created_at: "2016-12-15 12:43:42"
+  created_at: "2016-12-11 10:43:42"
   })
 Post.create!({
   id: 3,
@@ -41,7 +41,7 @@ Post.create!({
   user_id: 5,
   image: File.new("#{Rails.root}/app/assets/images/letterb.jpg"),
   caption: "My favorite letter!",
-  created_at: "2016-12-10 13:23:42"
+  created_at: "2016-12-12 13:23:42"
   })
 Post.create!({
   id: 5,
@@ -55,28 +55,28 @@ Post.create!({
   user_id: User.order("RANDOM()").first.id,
   image: File.new("#{Rails.root}/app/assets/images/lic.jpg"),
   caption: "Relaxing music...",
-  created_at: "2016-12-09 13:43:42"
+  created_at: "2016-12-13 13:43:42"
   })
 Post.create!({
   id: 7,
   user_id: 6,
   image: File.new("#{Rails.root}/app/assets/images/ryno.jpg"),
   caption: "Ryan is on top of the world!",
-  created_at: "2016-12-12 13:43:42"
+  created_at: "2016-12-14 13:43:42"
   })
 Post.create!({
   id: 8,
   user_id: 4,
   image: File.new("#{Rails.root}/app/assets/images/flier.jpg"),
   caption: "Looking forward to this.",
-  created_at: "2016-12-10 13:43:42"
+  created_at: "2016-12-15 13:33:42"
   })
 Post.create!({
   id: 9,
   user_id: 6,
   image: File.new("#{Rails.root}/app/assets/images/berlin.jpg"),
   caption: "Ich bin ein Berliner!",
-  created_at: "2016-12-11 13:43:42"
+  created_at: "2016-12-15 13:43:42"
   })
 
 Relationship.destroy_all

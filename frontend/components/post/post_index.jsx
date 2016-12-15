@@ -32,7 +32,9 @@ class PostIndex extends React.Component {
   render() {
 
     const allposts = this.props.posts.reverse();
+
     const items = allposts.map(function(post, index) {
+
       let likesCount;
       if (post.likes){
         likesCount = post.likes.length;
