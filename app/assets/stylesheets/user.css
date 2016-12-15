@@ -1,6 +1,13 @@
+.user-info-container {
+  float: right;
+  width: 50%;
+}
+
+
 .username {
   font-size: 24px;
-  margin: 16px;
+  margin: 10px;
+  float: left;
 }
 
 .user-img-container {
@@ -9,6 +16,8 @@
   overflow: hidden;
   height: 152px;
   width: 152px;
+  float: left;
+  margin: 50px;
 }
 
 .following-button {
@@ -24,8 +33,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 20%;
+  width: 40%;
   -webkit-appearance: none;
+  float: right;
+  font-size: 16px;
 }
 
 .follow-button {
@@ -43,4 +54,5 @@
   white-space: nowrap;
   width: 20%;
   -webkit-appearance: none;
+  float: right;
 }

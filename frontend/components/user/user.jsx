@@ -51,9 +51,11 @@ class User extends React.Component {
       if (isFollowing === true) {
       return (
         <section>
-          <h3 className="username">{ this.props.params.username }</h3>
+          <div className="user-info-container">
+          <h3 className="username group">{ this.props.params.username }</h3>
+            <button onClick={this.handleUnfollow} className="following-button group">Following</button>
+            </div>
             { profilePic }
-          <button onClick={this.handleUnfollow} className="following-button">Following</button>
         </section>
       );
       } else {
