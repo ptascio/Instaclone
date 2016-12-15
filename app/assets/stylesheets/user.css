@@ -2,3 +2,45 @@
   font-size: 24px;
   margin: 16px;
 }
+
+.user-img-container {
+  background-color: #fafafa;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 152px;
+  width: 152px;
+}
+
+.following-button {
+  background: #70c050;
+  border-color: #70c050;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  font-weight: 600;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 20%;
+  -webkit-appearance: none;
+}
+
+.follow-button {
+  background: 0 0;
+  border-color: ##3897f0;
+  color: #3897f0;
+  cursor: pointer;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  font-weight: 600;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 20%;
+  -webkit-appearance: none;
+}

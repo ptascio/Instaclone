@@ -42,7 +42,7 @@ class User extends React.Component {
 
     let profilePic;
     if (this.props.userPage[this.props.params.username]){
-      profilePic = <img src={this.props.userPage[this.props.params.username].image_url} />;
+      profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-container" />;
     } else {
       profilePic = <div></div>;
     }
@@ -53,7 +53,7 @@ class User extends React.Component {
         <section>
           <h3 className="username">{ this.props.params.username }</h3>
             { profilePic }
-          <button onClick={this.handleUnfollow}>Unfollow</button>
+          <button onClick={this.handleUnfollow} className="following-button">Following</button>
         </section>
       );
       } else {
@@ -61,7 +61,7 @@ class User extends React.Component {
           <section>
             <h3 className="username">{ this.props.params.username }</h3>
               { profilePic }
-            <button onClick={this.handleFollow}>Follow</button>
+            <button onClick={this.handleFollow} className="follow-button">Follow</button>
           </section>
         );
       }
