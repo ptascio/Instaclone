@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 User.create!([{ id: 1, username: "GuestUser", email:"guest@email.com", password:"123456"}])
-User.create!([{ id: 2, username: 'Pt', email: 'pt@email.com', password: 'password'}])
+User.create!([{ id: 2, username: 'Pt', email: 'pt@email.com', password: 'password', image: File.new("#{Rails.root}/app/assets/images/pt.jpg")}])
 User.create!([{ id:3, username: 'Jt', email: 'jt@email.com', password: 'password'}])
 User.create!([{ id: 4, username: 'Clare', email: 'clare@email.com', password: 'password'}])
 User.create!([{ id: 5, username: 'Marion', email: 'marion@email.com', password: 'password'}])

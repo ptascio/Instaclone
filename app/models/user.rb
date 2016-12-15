@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 
+  has_attached_file :image, default_url: "default-profile.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   has_many :posts,
     class_name: "Post",
     foreign_key: :user_id,

@@ -7,4 +7,5 @@ json.array! @posts do |post|
   json.created_at post.created_at
   json.comments post.comments
   json.likes post.user_likes
+  json.userImg asset_path(post.user.image.url)
 end

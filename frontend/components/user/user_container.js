@@ -7,7 +7,8 @@ const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
     following: state.relationship.following,
-    followers: state.relationship.followers
+    followers: state.relationship.followers,
+    userPage: state.user
   };
 };
 

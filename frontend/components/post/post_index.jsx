@@ -47,7 +47,7 @@ class PostIndex extends React.Component {
           <article className="all-post post-holder">
           <header className="pieko _s6yvg header-container">
             <a className="header-img-container">
-              <img src={post.image} className="header-img"/>
+              <img src={post.userImg} className="header-img"/>
             </a>
             <div className="inner-header">
               <Link to={ userUrl }>

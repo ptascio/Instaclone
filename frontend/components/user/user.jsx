@@ -25,6 +25,7 @@ class User extends React.Component {
   }
 
   render() {
+        
     const allFollowing = this.props.following;
     let isFollowing;
     if (allFollowing.hasOwnProperty(this.props.params.username)) {
@@ -37,6 +38,7 @@ class User extends React.Component {
       return (
         <section>
           <h3 className="username">{ this.props.params.username }</h3>
+          <img src={this.props.userPage[this.props.params.username].image_url} />
           <button onClick={this.handleUnfollow}>Unfollow</button>
         </section>
       );
