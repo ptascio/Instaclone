@@ -3,9 +3,15 @@ import CommentIndex from './comment_index';
 import { destroyComment, fetchComments } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  let comments;
+  if (state.post[ownProps.postId]){
+    comments = state.post[ownProps.postId].comments;
+  } else {
+    comments = [];
+  }
   return {
     currentUser: state.session.currentUser,
-    comments: state.post[ownProps.postId].comments
+    comments: comments
   };
 };
 

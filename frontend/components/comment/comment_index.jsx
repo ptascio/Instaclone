@@ -21,7 +21,13 @@ class CommentIndex extends React.Component{
   }
 
   render() {
-    let reverseComments = this.props.comments.reverse();
+    let reverseComments;
+    if (this.props.comments){
+      reverseComments = this.props.comments.reverse();
+    } else {
+      reverseComments = [];
+    }
+
     const postComments = reverseComments.map(function(comment) {
         let userUrl = `/users/${comment.username}`;
       return (
