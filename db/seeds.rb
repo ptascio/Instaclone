@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-User.create!([{ id: 1, username: "GuestUser", email:"guest@email.com", password:"123456"}])
+User.create!([{ id: 1, username: "GuestUser", email:"guest@email.com", password:"123456", image: File.new("#{Rails.root}/app/assets/images/guest.jpg")}])
 User.create!([{ id: 2, username: 'Pt', email: 'pt@email.com', password: 'password', image: File.new("#{Rails.root}/app/assets/images/pt.jpg")}])
-User.create!([{ id:3, username: 'Jt', email: 'jt@email.com', password: 'password'}])
-User.create!([{ id: 4, username: 'Clare', email: 'clare@email.com', password: 'password'}])
-User.create!([{ id: 5, username: 'Marion', email: 'marion@email.com', password: 'password'}])
-User.create!([{ id: 6, username: 'Magda', email: 'magda@email.com', password: 'password'}])
-User.create!([{ id: 7, username: 'Aaron', email: 'aaron@email.com', password: 'password'}])
+User.create!([{ id: 3, username: 'Jt', email: 'jt@email.com', password: 'password', image: File.new("#{Rails.root}/app/assets/images/jt.jpg")}])
+User.create!([{ id: 4, username: 'Clare', email: 'clare@email.com', password: 'password', image: File.new("#{Rails.root}/app/assets/images/clare.jpg")}])
+User.create!([{ id: 5, username: 'Marian', email: 'marian@email.com', password: 'password', image: File.new("#{Rails.root}/app/assets/images/marian.jpg")}])
+User.create!([{ id: 6, username: 'Magda', email: 'magda@email.com', password: 'password', image: File.new("#{Rails.root}/app/assets/images/magda.jpg")}])
+User.create!([{ id: 7, username: 'Aaron', email: 'aaron@email.com', password: 'password', image: File.new("#{Rails.root}/app/assets/images/aaron.jpg")}])
 
 Post.destroy_all
 Post.create!({
