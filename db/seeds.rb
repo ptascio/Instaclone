@@ -6,84 +6,97 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-User.create!([{ username: "GuestUser", email:"guest@email.com", password:"123456"}])
-User.create!([{ username: 'Pt', email: 'pt@email.com', password: 'password'}])
-User.create!([{ username: 'Jt', email: 'jt@email.com', password: 'password'}])
-User.create!([{ username: 'Clare', email: 'clare@email.com', password: 'password'}])
-User.create!([{ username: 'Marion', email: 'marion@email.com', password: 'password'}])
-User.create!([{ username: 'Magda', email: 'magda@email.com', password: 'password'}])
-User.create!([{ username: 'Aaron', email: 'aaron@email.com', password: 'password'}])
+User.create!([{ id: 1, username: "GuestUser", email:"guest@email.com", password:"123456"}])
+User.create!([{ id: 2, username: 'Pt', email: 'pt@email.com', password: 'password'}])
+User.create!([{ id:3, username: 'Jt', email: 'jt@email.com', password: 'password'}])
+User.create!([{ id: 4, username: 'Clare', email: 'clare@email.com', password: 'password'}])
+User.create!([{ id: 5, username: 'Marion', email: 'marion@email.com', password: 'password'}])
+User.create!([{ id: 6, username: 'Magda', email: 'magda@email.com', password: 'password'}])
+User.create!([{ id: 7, username: 'Aaron', email: 'aaron@email.com', password: 'password'}])
 
 Post.destroy_all
 Post.create!({
-  user_id: User.order("RANDOM()").first.id,
+  id: 1,
+  user_id: 1,
   image: File.new("#{Rails.root}/app/assets/images/niksband.jpg"),
   caption: "Listening to music..."
   })
 Post.create!({
-  user_id: User.order("RANDOM()").first.id,
+  id: 2,
+  user_id: 2,
   image: File.new("#{Rails.root}/app/assets/images/haircut.jpg"),
   caption: "need a haircut don't I?"
   })
 Post.create!({
-  user_id: User.order("RANDOM()").first.id,
+  id: 3,
+  user_id: 3,
   image: File.new("#{Rails.root}/app/assets/images/mixing.jpg"),
   caption: "Mixing in the basement!"
   })
 Post.create!({
-  user_id: User.order("RANDOM()").first.id,
+  id: 4,
+  user_id: 5,
   image: File.new("#{Rails.root}/app/assets/images/letterb.jpg"),
   caption: "My favorite letter!"
   })
 Post.create!({
-  user_id: User.order("RANDOM()").first.id,
+  id: 5,
+  user_id: 7,
   image: File.new("#{Rails.root}/app/assets/images/guitars.jpg"),
   caption: "guitar guitar guitar!"
   })
 Post.create!({
+  id: 6,
   user_id: User.order("RANDOM()").first.id,
   image: File.new("#{Rails.root}/app/assets/images/lic.jpg"),
   caption: "Relaxing music..."
   })
 Post.create!({
-  user_id: User.order("RANDOM()").first.id,
+  id: 7,
+  user_id: 6,
   image: File.new("#{Rails.root}/app/assets/images/ryno.jpg"),
-  caption: "On top of the world!"
+  caption: "Ryan is on top of the world!"
   })
 Post.create!({
-  user_id: User.order("RANDOM()").first.id,
+  id: 8,
+  user_id: 4,
   image: File.new("#{Rails.root}/app/assets/images/flier.jpg"),
   caption: "Looking forward to this."
   })
 Post.create!({
-  user_id: User.order("RANDOM()").first.id,
+  id: 9,
+  user_id: 6,
   image: File.new("#{Rails.root}/app/assets/images/berlin.jpg"),
   caption: "Ich bin ein Berliner!"
   })
 
 Relationship.destroy_all
-Relationship.create!({ follower_id: User.order("RANDOM()").first.id, followed_id: User.order("RANDOM()").first.id})
-Relationship.create!({ follower_id: User.order("RANDOM()").first.id, followed_id: User.order("RANDOM()").first.id})
-Relationship.create!({ follower_id: User.order("RANDOM()").first.id, followed_id: User.order("RANDOM()").first.id})
-Relationship.create!({ follower_id: User.order("RANDOM()").first.id, followed_id: User.order("RANDOM()").first.id})
-Relationship.create!({ follower_id: User.order("RANDOM()").first.id, followed_id: User.order("RANDOM()").first.id})
-Relationship.create!({ follower_id: User.order("RANDOM()").first.id, followed_id: User.order("RANDOM()").first.id})
-Relationship.create!({ follower_id: User.order("RANDOM()").first.id, followed_id: User.order("RANDOM()").first.id})
-Relationship.create!({ follower_id: User.order("RANDOM()").first.id, followed_id: User.order("RANDOM()").first.id})
-Relationship.create!({ follower_id: User.order("RANDOM()").first.id, followed_id: User.order("RANDOM()").first.id})
+Relationship.create!({ follower_id: 1, followed_id: 2})
+Relationship.create!({ follower_id: 1, followed_id: 3})
+Relationship.create!({ follower_id: 1, followed_id: 4})
+Relationship.create!({ follower_id: 1, followed_id: 5})
+Relationship.create!({ follower_id: 1, followed_id: 6})
+Relationship.create!({ follower_id: 1, followed_id: 7})
+Relationship.create!({ follower_id: 2, followed_id: 1})
+Relationship.create!({ follower_id: 2, followed_id: 3})
+Relationship.create!({ follower_id: 2, followed_id: 4})
 
 Like.destroy_all
-Like.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id})
-Like.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id})
-Like.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id})
-Like.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id})
-Like.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id})
-Like.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id})
-Like.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id})
+Like.create!({user_id: 1, post_id: 2})
+Like.create!({user_id: 1, post_id: 3})
+Like.create!({user_id: 1, post_id: 4})
+Like.create!({user_id: 2, post_id: 1})
+Like.create!({user_id: 2, post_id: 4})
+Like.create!({user_id: 2, post_id: 5})
+Like.create!({user_id: 2, post_id: 7})
+Like.create!({user_id: 1, post_id: 7})
 
 Comment.destroy_all
-Comment.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id, body:"Love this pic!"})
-Comment.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id, body:"Ahhh, good times..."})
-Comment.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id, body:"can I user this on my blog?"})
-Comment.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id, body:"This is great!"})
-Comment.create!({user_id: User.order("RANDOM()").first.id, post_id: Post.order("RANDOM()").first.id, body:"Perfect!"})
+Comment.create!({user_id: 2, username: "Pt", post_id: 1, body:"Great band!"})
+Comment.create!({user_id: 3, username: "Jt", post_id: 1, body:"Yeah they're music rocks!"})
+Comment.create!({user_id: 1, username: "GuestUser", post_id: 2, body:"yeah, might be time for a haircut :)"})
+Comment.create!({user_id: 3, username: "Jt", post_id: 2, body:"No way let it grow!"})
+Comment.create!({user_id: 1, username: "GuestUser", post_id: 5, body:"Just a suggestion but...maybe one more guitar?"})
+Comment.create!({user_id: 2, username: "Pt", post_id: 5, body:"Play loud!"})
+Comment.create!({user_id: 4, username: "Clare", post_id: 5, body:"I'm all about the bass!"})
+Comment.create!({user_id: 1, username: "GuestUser", post_id: 7, body:"Looking at this makes me happy :)"})
