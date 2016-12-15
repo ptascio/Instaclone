@@ -74,7 +74,7 @@
 
 .following-button {
   background: #70c050;
-  border-color: #70c050;
+  border-color: 1px solid #70c050;
   color: #fff;
   cursor: pointer;
   border-radius: 3px;
@@ -95,7 +95,7 @@
 
 .follow-button {
   background: 0 0;
-  border-color: ##3897f0;
+  border-color: 1px solid #3897f0;
   color: #3897f0;
   cursor: pointer;
   border-radius: 3px;
