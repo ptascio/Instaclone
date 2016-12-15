@@ -60,13 +60,17 @@ class User extends React.Component {
         return (
           <section>
             <h3 className="username">{ this.props.params.username }</h3>
+              { profilePic }
             <button onClick={this.handleFollow}>Follow</button>
           </section>
         );
       }
     } else {
       return (
-        <h3 className="username">{ this.props.params.username }</h3>
+        <section>
+          <h3 className="username">{ this.props.params.username }</h3>
+          { profilePic }
+        </section>
       );
     }
 }
