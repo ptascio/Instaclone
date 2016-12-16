@@ -46,23 +46,37 @@ class User extends React.Component {
     }
 
     let profilePic;
-    let posts;
+    let postsCount;
     let followers;
     let following;
+    let posts = [];
 
     if (this.props.userPage[this.props.params.username]){
       profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-style" />;
       followers = <span>{this.props.userPage[this.props.params.username].followers.length}followers</span>;
       following = <span>{this.props.userPage[this.props.params.username].following.length}following</span>;
-      posts = <span>{this.props.userPage[this.props.params.username].posts.length}posts</span>;
+      postsCount = <span>{this.props.userPage[this.props.params.username].posts.length}posts</span>;
     } else {
       profilePic = <div></div>;
       followers = <span></span>;
       following = <span></span>;
-      posts = <span></span>;
+      postsCount = <span></span>;
     }
 
+    if (this.props.userPage[this.props.params.username]){
+      posts = this.props.userPage[this.props.params.username].posts;
+    } else {
+      posts = posts;
+    }
+
+    const userProfilePosts = posts.map(function(post) {
       return (
+        <li key={post.id}><img src={post.image} className="user-pic"/></li>
+      );
+    });
+
+      return (
+      <section>
         <header className="user-header group">
           <div className="user-img-container">
             { profilePic }
@@ -74,7 +88,7 @@ class User extends React.Component {
             </span>
             <ul className="user-stats">
               <li className="user-stats-li">
-                { posts }
+                { postsCount }
               </li>
               <li className="user-stats-li">
                 { followers }
@@ -85,6 +99,12 @@ class User extends React.Component {
             </ul>
           </div>
         </header>
+        <section className="user-pics-container">
+          <ul className="user-pic-ul">
+          { userProfilePosts }
+        </ul>
+        </section>
+      </section>
       );
 }
 }
