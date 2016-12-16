@@ -6,6 +6,7 @@ import { selectAllPosts, selectAllComments, selectAllLikes } from '../../reducer
 
 const mapStateToProps = state => {
   return {
+    currentUser: state.session.currentUser,
     posts: selectAllPosts(state),
     allComments: selectAllComments(state),
     allLikes: selectAllLikes(state)

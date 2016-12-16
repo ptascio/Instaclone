@@ -34,7 +34,12 @@ class PostIndex extends React.Component {
     const allposts = this.props.posts.reverse();
 
     const items = allposts.map(function(post, index) {
-
+      let deleteButton;
+      if (post.username === this.props.currentUser.username){
+        deleteButton = <button onClick={() => this.removePost(post)} className="edit-options" className="comment-delete-button">delete post</button>;
+      } else {
+        deleteButton = <div></div>;
+      }
       let likesCount;
       if (post.likes){
         likesCount = post.likes.length;
@@ -68,8 +73,8 @@ class PostIndex extends React.Component {
                 <div className="likes-text-container likes-text-container-flex-style">
                   <span className="likes-text">{ likesCount } likes</span>
                 </div>
-                <CommentIndexContainer postId={post.id}/>
               </section>
+              <CommentIndexContainer postId={post.id}/>
               <ul className="caption-container">
                 <li className="caption-li">
                   <h1 className="caption-wrapper">
@@ -83,7 +88,7 @@ class PostIndex extends React.Component {
                   <CommentContainer postId={post.id}/>
               </section>
             </div>
-          <button onClick={() => this.removePost(post)} className="edit-options">Delete</button>
+            { deleteButton }
           </article>
         </li>
       );

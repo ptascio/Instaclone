@@ -3,13 +3,56 @@
   color: red
 }
 
-
-/*.fa-heart {
-  content: "\f08a";
-  color: #f00;
+.likes-text {
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-.fa-heart > i:hover:before{
-  content: "\f08a";
-  color: #000;
-}*/
+.likes-container:first-child {
+  margin-top: 16px;
+}
+
+.likes-container {
+  margin-bottom: 7px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+}
+
+.likes-container-flex-style {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.likes-text-container {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  color: #262626;
+  display: block;
+}
+
+.likes-text-container-flex-style {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}

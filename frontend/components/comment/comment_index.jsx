@@ -29,18 +29,24 @@ class CommentIndex extends React.Component{
     }
 
     const postComments = reverseComments.map(function(comment) {
+      let deleteButton;
+      if (comment.username === this.props.currentUser.username){
+        deleteButton = <button onClick={() => this.removeComment(comment)} className="comment-delete-button">delete</button>;
+      } else {
+        deleteButton = <div></div>;
+      }
         let userUrl = `/users/${comment.username}`;
       return (
-        <li key={comment.id}>
-          <Link to={ userUrl }>{comment.username}</Link>
+        <li key={comment.id} className="comment-li-list">
+          <Link to={ userUrl } className="comment-username">{comment.username}</Link>
           <span>{comment.body}</span>
-        <button onClick={() => this.removeComment(comment)}>Delete</button>
+          { deleteButton }
         </li>
       );
     }.bind(this));
     return (
       <section>
-        <ul>
+        <ul className="comment-ul-list">
           { postComments }
         </ul>
       </section>
