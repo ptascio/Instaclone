@@ -81,5 +81,5 @@
   <h3>Search</h3>
   <p>In the near future I plan to add search functionality so that users can find one another through usernames. I plan on using the pg_seacrh gem to implement this.</p>
 
-  <h3>Location</h3>
-  <p>Instagram offers add location to posts functionality and I would like implement that as well.</p>
+  <h3>Tagging Users</h3>
+  <p>I would also like to implement tagging functionality so that users can be notified when another tags them in a post or a comment.</p>
