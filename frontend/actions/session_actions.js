@@ -32,10 +32,6 @@ export function login(user){
   };
 }
 
-//logout need errors?
-//user should not be able to signout unless signed in,
-//but user should also never see logout button without signing in
-//so maybe errors not necessary?
 export function logout(){
   return (dispatch) => {
     return APIUtil.logout().then(
