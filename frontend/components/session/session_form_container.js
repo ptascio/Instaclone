@@ -3,7 +3,6 @@ import SessionForm from './session_form';
 import { login, signup } from '../../actions/session_actions';
 import { fetchFollowing } from '../../actions/relationship_actions';
 
-//does loggedIn work?
 const mapStateToProps = (state) => {
   let loggedIn;
   return {

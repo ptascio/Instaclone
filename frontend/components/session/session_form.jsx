@@ -14,9 +14,6 @@ class SessionForm extends React.Component{
     this.logInAsGuest = this.logInAsGuest.bind(this);
   }
 
-  // redirect() {
-  //   this.props.router.push('/');
-  // }
 
   handleSubmit(e) {
     e.preventDefault();

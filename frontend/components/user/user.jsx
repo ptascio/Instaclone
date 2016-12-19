@@ -13,7 +13,7 @@ class User extends React.Component {
   componentDidMount() {
     this.props.fetchUser(this.props.params.username);
   }
-//messed with this here so come here first if something breaks
+
   componentWillReceiveProps(nextProps){
     if(this.props.params.username !== nextProps.params.username ||
       this.props.following !== nextProps.following
