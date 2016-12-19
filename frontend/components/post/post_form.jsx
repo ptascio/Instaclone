@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-
+import { hashHistory } from 'react-router'
+;
 class PostForm extends React.Component {
   constructor(props){
     super(props);
@@ -9,13 +10,13 @@ class PostForm extends React.Component {
       imageUrl: null,
       caption: "",
       username: this.props.currentUser.username,
-      userId: this.props.currentUser.id
+      userId: this.props.currentUser.id,
+      postId: this.props.postId
     };
 
     this.updateFile = this.updateFile.bind(this);
     this.updateCaption = this.updateCaption.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.goPosts = this.goPosts.bind(this);
   }
 
   updateCaption(e){
@@ -30,23 +31,13 @@ class PostForm extends React.Component {
     var formData = new FormData();
     formData.append("post[caption]", this.state.caption);
     formData.append("post[image]", this.state.imageFile);
-    this.props.makePost(formData);
-    this.goPosts();
-  }
-  //
-
-  goPosts() {
-    this.props.router.push("/");
+    this.props.makePost(formData).then(hashHistory.push("/"));
   }
 
   updateFile(e) {
-    //get file
     let file = e.currentTarget.files[0];
-    //set up preview
     let fileReader = new FileReader();
-
     fileReader.onloadend = function () {
-      //same thing as post model
       this.setState({ imageFile: file, imageUrl: fileReader.result });
     }.bind(this);
 

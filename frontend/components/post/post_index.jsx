@@ -18,9 +18,11 @@ class PostIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    if(this.props.posts.length !== nextProps.posts.length ||
-      this.props.allComments.length !== nextProps.allComments.length ||
-      this.props.allLikes.length !== nextProps.allLikes.length) {
+    if(this.props.posts.length !== nextProps.posts.length) {
+      this.props.fetchPosts();
+    } else if (this.props.allComments.length !== nextProps.allComments.length ){
+      this.props.fetchPosts();
+    } else if (this.props.allLikes.length !== nextProps.allLikes.length) {
       this.props.fetchPosts();
     }
   }
@@ -28,11 +30,9 @@ class PostIndex extends React.Component {
   removePost(post) {
     this.props.destroyPost(post);
   }
-//kind of cheap way to make sure newest posts show up first
+
   render() {
-
     const allposts = this.props.posts.reverse();
-
     const items = allposts.map(function(post, index) {
       let deleteButton;
       if (post.username === this.props.currentUser.username){
