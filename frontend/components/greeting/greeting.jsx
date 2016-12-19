@@ -5,14 +5,8 @@ class Greeting extends React.Component {
   constructor(props){
     super(props);
   }
-//do this inside of the render
-//fix indentation
-
-
   render() {
-
     if (this.props.currentUser) {
-
     return (
       <section>
         <h3>Hello {this.props.currentUser.username}</h3>

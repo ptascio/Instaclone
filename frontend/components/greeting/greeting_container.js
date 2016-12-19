@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import Greeting from './greeting';
 import { logout } from '../../actions/session_actions';
 
-//changed it to state.session
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
