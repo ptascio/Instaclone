@@ -17,11 +17,9 @@ const relationshipReducer = (state = _nullRelationship, action) => {
       action.following.forEach(follow => newState["following"][follow.username] = follow);
       return newState;
     case FOLLOW_USER:
-      // action.following.forEach(follow => newState["following"][follow.id] = follow);
       newState["following"][action.user.username] = action.user;
       return newState;
     case UNFOLLOW_USER:
-      // action.following.forEach(follow => newState[follow.id] = follow);
       delete newState["following"][action.user.username];
       return newState;
     default:
