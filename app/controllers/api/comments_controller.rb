@@ -25,10 +25,6 @@ class Api::CommentsController < ApplicationController
   end
 
   def show
-    # debugger
-    # post = Post.find(params[:id])
-    # @comments = post.comments.all
-
     @comment = Comment.find(params[:id])
     @user = User.find(params[@comment.user_id])
   end

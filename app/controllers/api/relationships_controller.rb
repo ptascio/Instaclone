@@ -3,7 +3,6 @@ class Api::RelationshipsController < ApplicationController
 
   def create
     @user = User.find_by(username: params[:username])
-    # user = User.find(params[:followed_id])
     current_user.follow(@user)
     render "api/users/show"
   end

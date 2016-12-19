@@ -13,7 +13,6 @@ class Api::LikesController < ApplicationController
       render "api/likes/show", status: 200
     else
       @errors = like.errors.full_messages
-      #fix this! need an api/shared/error or similar
       render "api/likes/show", status: 422
     end
   end
