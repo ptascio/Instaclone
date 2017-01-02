@@ -4,6 +4,7 @@ export const makePost = (formData) => {
     method: "POST",
     contentType: false,
     processData: false,
+    dataType: 'json',
     data: formData
   });
 };

@@ -1,24 +1,33 @@
 import React from 'react';
+import merge from 'lodash/merge';
 
 class Comment extends React.Component{
   constructor(props) {
     super(props);
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-
     this.state = {
       body: "",
       username: this.props.currentUser.username,
       postId: this.props.postId
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchComments();
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.postId !== this.state.postId) {
+      this.setState({ postId: newProps.postId });
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const comment = Object.assign({}, this.state);
+    const comment = merge({}, this.state);
     this.props.makeComment(comment).then(
-      () => this.setState({ body: ""})
+      () => this.setState({ body: "" })
     );
   }
 

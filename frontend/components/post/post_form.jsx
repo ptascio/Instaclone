@@ -31,7 +31,7 @@ class PostForm extends React.Component {
     var formData = new FormData();
     formData.append("post[caption]", this.state.caption);
     formData.append("post[image]", this.state.imageFile);
-    this.props.makePost(formData).then(hashHistory.push("/"));
+    this.props.makePost(formData).then(this.props.router.push("/"));
   }
 
   updateFile(e) {

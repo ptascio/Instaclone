@@ -14,8 +14,6 @@ class CommentIndex extends React.Component{
     this.props.fetchComments();
   }
 
-
-
   removeComment(comment) {
     this.props.destroyComment(comment);
   }

@@ -55,7 +55,7 @@ class PostIndex extends React.Component {
       }else {
         date = <div></div>;
       }
-      
+
       return (
         <li key={index} className="li-spacing">
           <article className="all-post post-holder">

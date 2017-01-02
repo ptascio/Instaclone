@@ -1,35 +1,36 @@
-<h1>Sample State</h1>
+```js
 
-{<br/ >
-    &emsp;currentUser: {<br />
-      &emsp;id: 1,<br/ >
-      &emsp;username: "ptascio",<br/ >
-      &emsp;followers: 10,<br/ >
-      &emsp;following: 3,<br/ >
-      &emsp;email: ptascio@geemail.com<br/ >
+{
+    currentUser: {
+      id: 1,
+      username: "ptascio",
+      followers: 10,
+      following: 3,
+      email: ptascio@email.com
   },</p>
-  &emsp;forms: {<br />
-    &emsp;signUp: { errors: [] },<br />
-    &emsp;logIn:  { errors: [] },<br />
-    &emsp;upLoadPhoto: {errors: ["file must be an image type","image upload can't be blank"]}
-  },<br/ ><br/ >
-  photos: {<br/ >
-    &emsp;1: {<br/ >
-      &emsp;caption: "This is a great photo",<br />
-      &emsp;userId: 1,<br />
-      &emsp;comments: {<br />
-        &emsp;body: "I love this pic!"
-      },<br />
-      &emsp;likes: 14,<br />
-      &emsp;image_url: 'http://ptascio/image1.com'<br />
-    }<br />
-  },<br />
-  &emsp;comments: {<br />
-    &emsp;1: {<br />
-      &emsp;photoId: 2,<br />
-      &emsp;username: photoId.username,<br />
-      &emsp;body: "Looks delicious!"<br />
-    }<br />
-  },<br />
-  &emsp;total_user_likes: 15,<br />
+  forms: {
+    signUp: { errors: [] },
+    logIn:  { errors: [] },
+    upLoadPhoto: {errors: ["file must be an image type","image upload can't be blank"]}
+  },
+  photos: {
+    1: {
+      caption: "This is a great photo",
+      userId: 1,
+      comments: {
+        body: "I love this pic!"
+      },
+      likes: 14,
+      image_url: 'http://ptascio/image1.com'
+    }
+  },
+  comments: {
+    1: {
+      photoId: 2,
+      username: photoId.username,
+      body: "Looks delicious!"
+    }
+  },
+  total_user_likes: 15,
 }
+```
