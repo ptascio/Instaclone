@@ -47,6 +47,15 @@ class PostIndex extends React.Component {
         likesCount = 0;
       }
       let userUrl = `/users/${post.username}`;
+
+      let createdAt = <TimeAgo date={post.created_at} />;
+      let date;
+      if (post.created_at){
+        date = createdAt;
+      }else {
+        date = <div></div>;
+      }
+      
       return (
         <li key={index} className="li-spacing">
           <article className="all-post post-holder">
@@ -60,7 +69,7 @@ class PostIndex extends React.Component {
               </Link>
             </div>
             <time className="time-container">
-              <TimeAgo date={post.created_at} />
+              { date }
             </time>
           </header>
             <div className="post-outside-container all-post-inside _22yr2">
