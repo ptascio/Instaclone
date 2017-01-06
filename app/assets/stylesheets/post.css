@@ -149,6 +149,10 @@
   overflow: hidden;
 }
 
+.inner-header:hover {
+  color: #3897f0;
+}
+
 .inner-header-text {
   display: inline-block;
   max-width: 100%;

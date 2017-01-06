@@ -91,6 +91,10 @@
   width: 200px;
 }
 
+.img-logo:hover{
+    color: #3897f0;
+}
+
 .logo-text {
   font-family: 'Lobster Two', cursive;
   font-size: 34px;
@@ -125,11 +129,15 @@
   white-space: nowrap;
 }
 
+
 .link-items {
   padding-right: 5px;
   cursor: pointer;
 }
 
+.link-items:hover {
+  color: #3897f0;
+}
 .feed {
   margin-top: 26px;
 }

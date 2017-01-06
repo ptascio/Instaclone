@@ -50,6 +50,10 @@
   margin-right: 5px;
 }
 
+.comment-username:hover {
+  color: #3897f0;
+}
+
 .comment-delete-button {
   background: #fff;
   border: 1px solid #ed4337;
@@ -58,4 +62,9 @@
   border-radius: 2px;
   font-size: 10px;
   padding: 0;
+}
+
+.comment-delete-button:hover {
+  background: #ed4337;
+  color: #fff;
 }

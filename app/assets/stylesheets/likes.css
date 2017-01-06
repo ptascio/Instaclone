@@ -1,6 +1,10 @@
 .fa-heart {
   content: "\f004";
-  color: red
+  color: red;
+}
+
+.fa-heart-o:hover {
+  color: red;
 }
 
 .likes-text {
