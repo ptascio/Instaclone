@@ -81,7 +81,7 @@ class SessionForm extends React.Component{
         </section>
         <section className="have-account">
           <p className="inside-account">Have an account? &nbsp;
-              <Link to={`/${link}`}>Log In</Link>
+              <Link to={`/${link}`} className="logger">Log In</Link>
           </p>
         </section>
       </section>
@@ -117,8 +117,8 @@ class SessionForm extends React.Component{
           </form>
         </section>
         <section className="have-account">
-          <p className="inside-account">Don't have an account? &nbsp;
-              <Link to={`/${link}`}>Sign Up</Link>
+          <p className="inside-account">Don&#39;t have an account? &nbsp;
+              <Link to={`/${link}`} className="logger">Sign Up</Link>
           </p>
         </section>
       </section>

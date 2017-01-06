@@ -95,6 +95,11 @@
     color: #3897f0;
 }
 
+.desktop-nav-logo {
+  height: 35px;
+  width: 100px;
+}
+
 .logo-text {
   font-family: 'Lobster Two', cursive;
   font-size: 34px;

@@ -91,6 +91,15 @@ button {
   font-size: 16px;
 }
 
+button:hover {
+  color: #3897f0;
+  background: #fff;
+}
+
+.logger:hover{
+  color: #3897f0;
+}
+
 .inner-form {
   text-align: center;
   height: 400px;
