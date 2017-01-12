@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users, param: :username, only: [:create, :show] do
+      get 'search', on: :collection
       member do
         get :following, :followers
       end

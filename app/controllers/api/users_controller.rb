@@ -33,6 +33,17 @@ class Api::UsersController < ApplicationController
     render "api/users/followers"
   end
 
+  def search
+
+   if params[:query]["body"].length > 0
+     @users = User.where("username ~ ?", params[:query]["body"])
+   else
+     @users = User.none
+   end
+
+    render "api/users/search"
+  end
+
   private
     def user_params
       params.require(:user).permit(:username, :email, :password)

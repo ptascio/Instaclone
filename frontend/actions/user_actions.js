@@ -30,3 +30,12 @@ export function fetchAllUsers() {
     });
   };
 }
+
+export function searchUsers(userName){
+  return (dispatch) => {
+    return APIUtil.searchUsers(userName).then(user => {
+      dispatch(receiveUser(user));
+      return user;
+    });
+  };
+}

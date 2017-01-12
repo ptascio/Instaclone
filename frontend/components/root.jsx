@@ -8,6 +8,7 @@ import UserContainer from './user/user_container';
 import PostIndexContainer from './post/post_index_container';
 import PostFormContainer from './post/post_form_container';
 import RelationshipContainer from './relationship/relationship_container';
+import SearchContainer from './search/search_container';
 
 
 
@@ -43,6 +44,7 @@ return (
         <Route path="/logout" component={ GreetingContainer } />
         <Route path="/users/:username" component={ UserContainer } />
         <Route path="/followers" component={ RelationshipContainer } />
+        <Route path="/users/search" component= { SearchContainer } />
       </Route>
 
     </Router>

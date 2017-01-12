@@ -3,6 +3,7 @@ import SessionFormContainer from './session/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import PostFormContainer from './post/post_form_container';
 import PostIndex from './post/post_index';
+import SearchContainer from './search/search_container';
 import { fetchFollowing, fetchFollowers } from '../actions/relationship_actions';
 import { connect } from 'react-redux';
 import { logout } from '../actions/session_actions';
@@ -36,14 +37,18 @@ class App extends React.Component {
                     <a className="img-logo" href="/">
                       <span className="logo-text">Instaclone</span>
                     </a>
+
                   </div>
-                  <div className="searchBar">
-                  </div>
-                  <div className="nav-functional">
-                    <div className="nav-functional-text">
-                      <a href="/#/form"><span className="link-items">Post</span></a><br />
-                      <a href="" onClick={this.signOut}><span className="link-items">Logout</span></a>
-                    </div>
+
+
+                </div>
+                <div className="move-search">
+                  <SearchContainer />
+                </div>
+                <div className="nav-functional">
+                  <div className="nav-functional-text">
+                    <a href="/#/form"><span className="link-items">Post</span></a><br />
+                    <a href="" onClick={this.signOut}><span className="link-items">Logout</span></a>
                   </div>
                 </div>
               </div>
