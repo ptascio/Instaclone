@@ -1,3 +1,17 @@
+.user-container {
+  margin: 0 auto 30px;
+  width: 100%;
+  flex-grow: 1;
+  -webkit-box-flex: 1;
+}
+
+.user-article {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+}
+
+
+
 .user-header {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;

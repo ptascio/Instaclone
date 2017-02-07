@@ -53,9 +53,9 @@ class User extends React.Component {
 
     if (this.props.userPage[this.props.params.username]){
       profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-style" />;
-      followers = <span>{this.props.userPage[this.props.params.username].followers.length}followers</span>;
-      following = <span>{this.props.userPage[this.props.params.username].following.length}following</span>;
-      postsCount = <span>{this.props.userPage[this.props.params.username].posts.length}posts</span>;
+      followers = <span>{this.props.userPage[this.props.params.username].followers.length} followers</span>;
+      following = <span>{this.props.userPage[this.props.params.username].following.length} following</span>;
+      postsCount = <span>{this.props.userPage[this.props.params.username].posts.length} posts</span>;
     } else {
       profilePic = <div></div>;
       followers = <span></span>;
@@ -77,6 +77,7 @@ class User extends React.Component {
 
       return (
       <section>
+        <article className="user-container user-article">
         <header className="user-header group">
           <div className="user-img-container">
             { profilePic }
@@ -104,6 +105,7 @@ class User extends React.Component {
           { userProfilePosts }
         </ul>
         </section>
+      </article>
       </section>
       );
 }
