@@ -77,12 +77,12 @@ class User extends React.Component {
 
       return (
       <section>
-        <article className="user-container user-article">
+        <article className="user-center">
         <header className="user-header group">
           <div className="user-img-container">
             { profilePic }
           </div>
-          <div className="user-info-container">
+          <div className="user-info-container user-container user-article">
           <h3 className="username group">{ this.props.params.username }</h3>
           <span className="button-wrapper">
             { button }

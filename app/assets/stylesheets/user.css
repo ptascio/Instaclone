@@ -1,3 +1,8 @@
+.user-center {
+  margin: 0 auto;
+  width: 50%;
+}
+
 .user-container {
   margin: 0 auto 30px;
   width: 100%;
@@ -8,6 +13,8 @@
 .user-article {
   -webkit-box-align: stretch;
   align-items: stretch;
+  display: flex;
+  margin: 0 auto;
 }
 
 
