@@ -8,11 +8,13 @@ import { fetchFollowing, fetchFollowers } from '../actions/relationship_actions'
 import { connect } from 'react-redux';
 import { logout } from '../actions/session_actions';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router';
 
 class App extends React.Component {
   constructor(props){
     super(props);
     this.signOut = this.signOut.bind(this);
+
   }
   componentDidMount() {
     this.props.fetchFollowing(this.props.currentUser);
@@ -26,6 +28,7 @@ class App extends React.Component {
 
 
   render(){
+    let userUrl = `users/${this.props.currentUser.username}`;
     return (
       <section>
         <nav className="nav-container">
@@ -49,6 +52,7 @@ class App extends React.Component {
                   <div className="nav-functional-text">
                     <a href="/#/form"><span className="link-items">Post</span></a><br />
                     <a href="" onClick={this.signOut}><span className="link-items">Logout</span></a>
+                    <Link to={ userUrl } ><span className="link-items">Me</span></Link>
                   </div>
                 </div>
               </div>

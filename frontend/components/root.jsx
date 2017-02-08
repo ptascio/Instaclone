@@ -28,8 +28,6 @@ const Root = ({ store }) => {
     }
   };
 
-//on App build the header in the App component
-//build another c
 return (
   <Provider store={ store }>
     <Router history={ hashHistory }>
