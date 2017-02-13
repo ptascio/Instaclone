@@ -24,6 +24,8 @@ class Api::UsersController < ApplicationController
       else
         render json: @user.errors.full_messages, status: 400
       end
+    else
+      render json: "No User Found", status: 404
     end
   end
 
