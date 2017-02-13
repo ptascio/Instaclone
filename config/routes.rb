@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#root'
 
   namespace :api, defaults: { format: :json } do
-    resources :users, param: :username, only: [:create, :show] do
+    resources :users, param: :username, only: [:create, :show, :update] do
       get 'search', on: :collection
       member do
         get :following, :followers

@@ -16,6 +16,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = current_user
+  end
+
   def show
     @user = User.find_by(username: params[:username])
     @posts = @user.posts
@@ -34,7 +38,6 @@ class Api::UsersController < ApplicationController
   end
 
   def search
-
    if params[:query]["body"].length > 0
      @users = User.where("username ~ ?", params[:query]["body"])
    else
