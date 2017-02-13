@@ -17,8 +17,6 @@
   margin: 0 auto;
 }
 
-
-
 .user-header {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -91,6 +89,17 @@
   height: 152px;
   width: 152px;
   margin: 50px;
+}
+.darken {
+  display: inline-block;
+    background: black;
+    padding: 0;
+}
+
+.user-img-style:hover {
+  background-color:#000;
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .following-button {
