@@ -15,7 +15,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchUser: (username) => dispatch(fetchUser(username)),
-    updateUser: (data, username) => dispatch(updateUser(data, username)),
+    updateUser: (data) => dispatch(updateUser(data)),
     fetchFollowing: (currentUser) => dispatch(fetchFollowing(currentUser)),
     follow: (user) => dispatch(follow(user)),
     unfollow: (user) => dispatch(unfollow(user)),
