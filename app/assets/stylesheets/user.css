@@ -91,6 +91,16 @@
   margin: 50px;
 }
 
+.user-img-style-update {
+  background-color: #000;
+  opacity: 0.5;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 152px;
+  width: 152px;
+  margin: 50px;
+}
+
 .following-button {
   background: #70c050;
   border-color: #70c050;

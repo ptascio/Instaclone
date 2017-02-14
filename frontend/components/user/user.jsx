@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-
+const Modal = require('react-modal');
 
 class User extends React.Component {
 
@@ -8,7 +8,8 @@ class User extends React.Component {
     super(props);
     this.state = {
       imageFile: null,
-      imageUrl: null
+      imageUrl: null,
+      modalOpen: false
     };
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
@@ -43,20 +44,19 @@ class User extends React.Component {
     this.props.updateUser(formData);
   }
 
-  updateProfilePic() {
-    if (this.props.params.username === this.props.currentUser.username){
-      return (
-        <div>
-          hello
-          <form>
-            <input type="file"
-              onChange={this.handleProfilePic}
-              />
-          </form>
-        </div>
-      );
-    }
-  }
+  // updateProfilePic() {
+  //   if (this.props.params.username === this.props.currentUser.username){
+  //     return (
+  //       <div className="user-img-style-update">
+  //         <form>
+  //           <input type="file"
+  //             onChange={this.handleProfilePic}
+  //             />
+  //         </form>
+  //       </div>
+  //     );
+  //   }
+  // }
 
   render() {
     const allFollowing = this.props.following;
@@ -103,9 +103,6 @@ class User extends React.Component {
 
       return (
       <section>
-        <div>
-        { this.updateProfilePic() }
-      </div>
         <article className="user-center">
         <header className="user-header group">
           <div className="user-img-container">
@@ -135,6 +132,12 @@ class User extends React.Component {
         </ul>
         </section>
       </article>
+
+      <Modal
+        isOpen={this.state.modalOpen}
+        >
+        ...content
+      </Modal>
       </section>
       );
 }

@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { fetchPosts } from './actions/post_actions';
 import { fetchFollowers } from './actions/relationship_actions';
+const Modal = require('react-modal');
 
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
@@ -15,5 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 }
   window.store = store;
   const root = document.getElementById('content');
+  Modal.setAppElement(document.body);
   ReactDOM.render(<Root store={ store } />, root);
 });
