@@ -143,12 +143,12 @@ class User extends React.Component {
         <ul className="user-profile-update">
           <li>Change Profile Picture</li>
           <li>
-            <button>
+            <button className="profile-pic-button">
               Upload Photo
             </button>
           </li>
           <li>
-            <button>
+            <button className="profile-pic-button">
               Cancel
             </button>
           </li>

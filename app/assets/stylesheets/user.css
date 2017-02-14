@@ -98,10 +98,19 @@
   font-size: 16px;
 }
 
-.user-profile-update > button:hover {
-  background: #dbdbdb;
-  color: white;
+.profile-pic-button {
+  color: #262626;
   cursor: pointer;
+  background: #fff;
+  width: 100%;
+  border: none;
+  margin: 5px;
+}
+
+.profile-pic-button:hover {
+  background: #262626;
+  color: #fff;
+  border-radius: 0;
 }
 
 .following-button {
