@@ -87,6 +87,13 @@ class User extends React.Component {
     let posts = [];
 
     if (this.props.userPage[this.props.params.username]){
+      if (this.props.params.username === this.props.currentUser.username){
+        const divStyle = {
+          opacity: 0.5,
+        };
+        profilePic = <img style={divStyle} src={this.props.userPage[this.props.params.username].image_url}  className="user-img-style" />;
+      }
+
       profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-style" />;
       followers = <span>{this.props.userPage[this.props.params.username].followers.length} followers</span>;
       following = <span>{this.props.userPage[this.props.params.username].following.length} following</span>;
@@ -103,6 +110,55 @@ class User extends React.Component {
     } else {
       posts = posts;
     }
+
+    let modal;
+    const customStyles = {
+      overlay : {
+        position        : 'fixed',
+        top             : 0,
+        left            : 0,
+        right           : 0,
+        bottom          : 0,
+        backgroundColor : 'rgba(0, 0, 0, 0.75)',
+        zIndex          : 10
+      },
+      content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+      }
+    };
+
+    if (this.props.params.username === this.props.currentUser.username){
+      modal = <Modal
+        isOpen={this.state.modalOpen}
+        onRequestClose={this.closeModal}
+        style={customStyles}
+        contentLabel="Modal"
+
+        >
+        <ul className="user-profile-update">
+          <li>Change Profile Picture</li>
+          <li>
+            <button>
+              Upload Photo
+            </button>
+          </li>
+          <li>
+            <button>
+              Cancel
+            </button>
+          </li>
+        </ul>
+      </Modal>;
+    }else {
+      modal = <div></div>;
+    }
+
+
 
     const userProfilePosts = posts.map(function(post) {
       return (
@@ -141,14 +197,8 @@ class User extends React.Component {
         </ul>
         </section>
       </article>
+      { modal }
 
-      <Modal
-        isOpen={this.state.modalOpen}
-        onRequestClose={this.closeModal}
-        contentLabel="Modal"
-        >
-        ...content
-      </Modal>
       </section>
       );
 }
