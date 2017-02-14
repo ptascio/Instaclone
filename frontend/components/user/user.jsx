@@ -13,6 +13,8 @@ class User extends React.Component {
     };
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
@@ -44,6 +46,13 @@ class User extends React.Component {
     this.props.updateUser(formData);
   }
 
+  openModal(){
+    this.setState({ modalOpen: true });
+  }
+
+  closeModal(){
+    this.setState({ modalOpen: false });
+  }
   // updateProfilePic() {
   //   if (this.props.params.username === this.props.currentUser.username){
   //     return (
@@ -105,7 +114,7 @@ class User extends React.Component {
       <section>
         <article className="user-center">
         <header className="user-header group">
-          <div className="user-img-container">
+          <div onClick = {this.openModal} className="user-img-container" >
             { profilePic }
           </div>
           <div className="user-info-container user-container user-article">
@@ -135,6 +144,8 @@ class User extends React.Component {
 
       <Modal
         isOpen={this.state.modalOpen}
+        onRequestClose={this.closeModal}
+        contentLabel="Modal"
         >
         ...content
       </Modal>
