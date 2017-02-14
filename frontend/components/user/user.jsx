@@ -6,6 +6,10 @@ class User extends React.Component {
 
   constructor(props){
     super(props);
+    this.state = {
+      imageFile: null,
+      imageUrl: null
+    };
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
   }
@@ -30,6 +34,28 @@ class User extends React.Component {
   handleUnfollow(e){
     e.preventDefault();
     this.props.unfollow(this.props.params.username);
+  }
+
+  handleProfilePic(e){
+    let file = e.currentTarget.files[0];
+    var formData = new FormData();
+    formData.append("user[image]", file);
+    this.props.updateUser(formData);
+  }
+
+  updateProfilePic() {
+    if (this.props.params.username === this.props.currentUser.username){
+      return (
+        <div>
+          hello
+          <form>
+            <input type="file"
+              onChange={this.handleProfilePic}
+              />
+          </form>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -77,6 +103,9 @@ class User extends React.Component {
 
       return (
       <section>
+        <div>
+        { this.updateProfilePic() }
+      </div>
         <article className="user-center">
         <header className="user-header group">
           <div className="user-img-container">
