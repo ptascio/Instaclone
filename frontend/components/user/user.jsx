@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import UserFollowing from './user_following';
 const Modal = require('react-modal');
 
 class User extends React.Component {
@@ -9,7 +10,8 @@ class User extends React.Component {
     this.state = {
       imageFile: null,
       imageUrl: null,
-      modalOpen: false
+      modalOpen: false,
+      followingModal: false,
     };
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
@@ -17,6 +19,7 @@ class User extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleProfilePic = this.handleProfilePic.bind(this);
     this.updateProfilePic = this.updateProfilePic.bind(this);
+    this.launchFollowing = this.launchFollowing.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +42,10 @@ class User extends React.Component {
   handleUnfollow(e){
     e.preventDefault();
     this.props.unfollow(this.props.params.username);
+  }
+
+  launchFollowing(){
+    this.setState({ followingModal: true });
   }
 
   openModal(){
@@ -96,7 +103,7 @@ class User extends React.Component {
         profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-style" />;
       }
       followers = <span>{this.props.userPage[this.props.params.username].followers.length} followers</span>;
-      following = <span>{this.props.userPage[this.props.params.username].following.length} following</span>;
+      following = <span onClick={this.launchFollowing}>{this.props.userPage[this.props.params.username].following.length} following</span>;
       postsCount = <span>{this.props.userPage[this.props.params.username].posts.length} posts</span>;
     } else {
       profilePic = <div></div>;
@@ -183,7 +190,7 @@ class User extends React.Component {
               <li className="user-stats-li">
                 { postsCount }
               </li>
-              <li className="user-stats-li">
+              <li className="user-stats-li" >
                 { followers }
               </li>
               <li className="user-stats-li">
@@ -199,7 +206,7 @@ class User extends React.Component {
         </section>
       </article>
       { modal }
-
+        <UserFollowing modalOpen={this.state.followingModal} />
       </section>
       );
 }

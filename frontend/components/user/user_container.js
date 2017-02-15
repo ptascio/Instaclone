@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { logout, fetchUser, updateUser } from '../../actions/user_actions';
 import { follow, unfollow, fetchFollowing } from '../../actions/relationship_actions';
 import User from './user';
+import UserFollowing from './user_following';
 
 const mapStateToProps = state => {
   return {
@@ -26,4 +27,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(User);
+)(User, UserFollowing);
