@@ -15,6 +15,8 @@ class User extends React.Component {
     this.handleUnfollow = this.handleUnfollow.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleProfilePic = this.handleProfilePic.bind(this);
+    this.updateProfilePic = this.updateProfilePic.bind(this);
   }
 
   componentDidMount() {
@@ -39,13 +41,6 @@ class User extends React.Component {
     this.props.unfollow(this.props.params.username);
   }
 
-  handleProfilePic(e){
-    let file = e.currentTarget.files[0];
-    var formData = new FormData();
-    formData.append("user[image]", file);
-    this.props.updateUser(formData);
-  }
-
   openModal(){
     this.setState({ modalOpen: true });
   }
@@ -53,19 +48,27 @@ class User extends React.Component {
   closeModal(){
     this.setState({ modalOpen: false });
   }
-  // updateProfilePic() {
-  //   if (this.props.params.username === this.props.currentUser.username){
-  //     return (
-  //       <div className="user-img-style-update">
-  //         <form>
-  //           <input type="file"
-  //             onChange={this.handleProfilePic}
-  //             />
-  //         </form>
-  //       </div>
-  //     );
-  //   }
-  // }
+
+  handleProfilePic(e){
+    let file = e.currentTarget.files[0];
+    var formData = new FormData();
+    formData.append("user[image]", file);
+    this.props.updateUser(formData).then(this.closeModal);
+  }
+
+  updateProfilePic() {
+    if (this.props.params.username === this.props.currentUser.username){
+      return (
+        <div>
+          <form>
+            <input type="file"
+              onChange={this.handleProfilePic}
+              />
+          </form>
+        </div>
+      );
+    }
+  }
 
   render() {
     const allFollowing = this.props.following;
@@ -143,12 +146,13 @@ class User extends React.Component {
         <ul className="user-profile-update">
           <li>Change Profile Picture</li>
           <li>
-            <button className="profile-pic-button">
-              Upload Photo
-            </button>
+            <form className="profile-pic-button">
+              <input type="file" onChange={this.handleProfilePic} className="myLabel-button user-myLabel-button"/>
+              <span className="mask">Update Picture</span>
+            </form>
           </li>
           <li>
-            <button className="profile-pic-button">
+            <button className="profile-pic-button" onClick={this.closeModal}>
               Cancel
             </button>
           </li>

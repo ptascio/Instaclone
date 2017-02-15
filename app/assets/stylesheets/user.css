@@ -98,6 +98,10 @@
   font-size: 16px;
 }
 
+.user-myLabel-button {
+  height: 20%;
+}
+
 .profile-pic-button {
   color: #262626;
   cursor: pointer;
