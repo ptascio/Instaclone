@@ -15,7 +15,13 @@ class UserFollowing extends React.Component{
   }
 
   closeModal(){
-    this.props.modalOpen = !this.props.modalOpen;
+    this.setState({ modalOpen: false });
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      modalOpen: this.props.modalOpen
+    });
   }
 
   render(){
@@ -24,7 +30,7 @@ class UserFollowing extends React.Component{
         isOpen={this.state.modalOpen}
         contentLabel="Modal"
         >
-        <span onClick={this.state.modalOpen}>X</span>
+        <span onClick={this.closeModal}>X</span>
         <ul>
           <li>Milk</li>
           <li>Eggs</li>
