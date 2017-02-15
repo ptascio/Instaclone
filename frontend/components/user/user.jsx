@@ -91,13 +91,10 @@ class User extends React.Component {
 
     if (this.props.userPage[this.props.params.username]){
       if (this.props.params.username === this.props.currentUser.username){
-        const divStyle = {
-          opacity: 0.5,
-        };
-        profilePic = <img style={divStyle} src={this.props.userPage[this.props.params.username].image_url}  className="user-img-style" />;
+        profilePic = <img style={{cursor: 'pointer'}} src={this.props.userPage[this.props.params.username].image_url}  className="user-img-style" />;
+      }else {
+        profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-style" />;
       }
-
-      profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-style" />;
       followers = <span>{this.props.userPage[this.props.params.username].followers.length} followers</span>;
       following = <span>{this.props.userPage[this.props.params.username].following.length} following</span>;
       postsCount = <span>{this.props.userPage[this.props.params.username].posts.length} posts</span>;
