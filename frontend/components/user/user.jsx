@@ -103,7 +103,7 @@ class User extends React.Component {
         profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-style" />;
       }
       followers = <span>{this.props.userPage[this.props.params.username].followers.length} followers</span>;
-      following = <span onClick={this.launchFollowing}>{this.props.userPage[this.props.params.username].following.length} following</span>;
+      following = <span style={{cursor: 'pointer'}} onClick={this.launchFollowing}>{this.props.userPage[this.props.params.username].following.length} following</span>;
       postsCount = <span>{this.props.userPage[this.props.params.username].posts.length} posts</span>;
     } else {
       profilePic = <div></div>;
@@ -206,7 +206,10 @@ class User extends React.Component {
         </section>
       </article>
       { modal }
-        <UserFollowing modalOpen={this.state.followingModal} />
+        <UserFollowing
+          modalOpen={this.state.followingModal}
+          following={this.props.following}
+          />
       </section>
       );
 }
