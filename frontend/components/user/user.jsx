@@ -78,6 +78,7 @@ class User extends React.Component {
   }
 
   render() {
+
     const allFollowing = this.props.following;
     let button;
     if (this.props.currentUser.username !== this.props.params.username){
@@ -95,6 +96,7 @@ class User extends React.Component {
     let followers;
     let following;
     let posts = [];
+    let realFollowing;
 
     if (this.props.userPage[this.props.params.username]){
       if (this.props.params.username === this.props.currentUser.username){
@@ -105,11 +107,13 @@ class User extends React.Component {
       followers = <span>{this.props.userPage[this.props.params.username].followers.length} followers</span>;
       following = <span style={{cursor: 'pointer'}} onClick={this.launchFollowing}>{this.props.userPage[this.props.params.username].following.length} following</span>;
       postsCount = <span>{this.props.userPage[this.props.params.username].posts.length} posts</span>;
+      realFollowing = this.props.userPage[this.props.params.username].following;
     } else {
       profilePic = <div></div>;
       followers = <span></span>;
       following = <span></span>;
       postsCount = <span></span>;
+      realFollowing = [];
     }
 
     if (this.props.userPage[this.props.params.username]){
@@ -166,8 +170,6 @@ class User extends React.Component {
       modal = <div></div>;
     }
 
-
-
     const userProfilePosts = posts.map(function(post) {
       return (
         <li key={post.id}><img src={post.image} className="user-pic"/></li>
@@ -208,7 +210,7 @@ class User extends React.Component {
       { modal }
         <UserFollowing
           modalOpen={this.state.followingModal}
-          following={this.props.following}
+          following={realFollowing}
           />
       </section>
       );

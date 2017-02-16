@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 const Modal = require('react-modal');
 
 class UserFollowing extends React.Component{
@@ -7,7 +7,8 @@ class UserFollowing extends React.Component{
     super(props);
     this.state = {
       modalOpen: this.props.modalOpen,
-      following: this.props.following
+      following: this.props.following,
+
     };
     this.closeModal = this.closeModal.bind(this);
   }
@@ -38,7 +39,7 @@ class UserFollowing extends React.Component{
 
       let userUrl = `/users/${username.username}`;
       return(
-        <li key={index}>
+        <li key={index} >
           <Link to={ userUrl }>
             {username.username}
           </Link>
@@ -66,6 +67,7 @@ class UserFollowing extends React.Component{
         transform             : 'translate(-50%, -50%)'
       }
     };
+
     return(
       <Modal
         isOpen={this.state.modalOpen}
@@ -73,7 +75,7 @@ class UserFollowing extends React.Component{
         contentLabel="Modal"
         >
         <span onClick={this.closeModal}>X</span>
-        <ul>
+        <ul onClick={this.closeModal}>
           { listFollowing }
         </ul>
       </Modal>
