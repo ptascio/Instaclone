@@ -227,3 +227,13 @@
   width: 200px;
   height: 200px;
 }
+
+.user-follow:hover {
+  cursor: pointer;
+  color: #3897f0;
+}
+
+.close-follow-modal:hover {
+  cursor: pointer;
+  color: #ed4337;
+}

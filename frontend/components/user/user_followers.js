@@ -2,12 +2,12 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 const Modal = require('react-modal');
 
-class UserFollowing extends React.Component{
+class UserFollowers extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       modalOpen: this.props.modalOpen,
-      following: this.props.following,
+      followers: this.props.followers,
     };
     this.closeModal = this.closeModal.bind(this);
   }
@@ -23,18 +23,18 @@ class UserFollowing extends React.Component{
   componentWillReceiveProps(nextProps){
     this.setState({
       modalOpen: nextProps.modalOpen,
-      following: this.props.following
+      followers: this.props.followers
     });
   }
 
   render(){
-    console.log("following");
-    let info = this.props.following;
-    let following = Object.keys(info).map(function (key){
+    let info = this.props.followers;
+    let followers = Object.keys(info).map(function (key){
       return info[key];
     });
 
-    const listFollowing = following.map(function(username, index){
+
+    const listFollowers = followers.map(function(username, index){
 
       let userUrl = `/users/${username.username}`;
       return(
@@ -66,7 +66,7 @@ class UserFollowing extends React.Component{
         transform             : 'translate(-50%, -50%)'
       }
     };
-
+  console.log("followers");
     return(
       <Modal
         isOpen={this.state.modalOpen}
@@ -75,11 +75,11 @@ class UserFollowing extends React.Component{
         >
         <span className="close-follow-modal" onClick={this.closeModal}>X</span>
         <ul onClick={this.closeModal}>
-          { listFollowing }
+          { listFollowers }
         </ul>
       </Modal>
     );
   }
 }
 
-export default UserFollowing;
+export default UserFollowers;

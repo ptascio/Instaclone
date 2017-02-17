@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import UserFollowing from './user_following';
+import UserFollowers from './user_followers';
 const Modal = require('react-modal');
 
 class User extends React.Component {
@@ -12,6 +13,7 @@ class User extends React.Component {
       imageUrl: null,
       modalOpen: false,
       followingModal: false,
+      followersModal: false
     };
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
@@ -21,6 +23,8 @@ class User extends React.Component {
     this.updateProfilePic = this.updateProfilePic.bind(this);
     this.launchFollowing = this.launchFollowing.bind(this);
     this.unlaunchFollowing = this.unlaunchFollowing.bind(this);
+    this.launchFollowers = this.launchFollowers.bind(this);
+    this.unlaunchFollowers = this.unlaunchFollowers.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +36,7 @@ class User extends React.Component {
       this.props.following !== nextProps.following
     ) {
       this.unlaunchFollowing();
+      this.unlaunchFollowers();
       this.props.fetchUser(nextProps.params.username);
     }
   }
@@ -47,11 +52,22 @@ class User extends React.Component {
   }
 
   launchFollowing(){
-    this.setState({ followingModal: true });
+    this.setState({ followersModal: false,
+                    followingModal: true });
   }
 
   unlaunchFollowing(){
-    this.setState({ followingModal: false});
+    this.setState({ followingModal: false,
+                    followersModal: false});
+  }
+
+  launchFollowers(){
+    this.setState({ followingModal: false,
+                    followersModal: true });
+  }
+
+  unlaunchFollowers(){
+    this.setState({ followersModal: false });
   }
 
   openModal(){
@@ -103,23 +119,25 @@ class User extends React.Component {
     let following;
     let posts = [];
     let realFollowing;
-
+    let realFollowers;
     if (this.props.userPage[this.props.params.username]){
       if (this.props.params.username === this.props.currentUser.username){
         profilePic = <img style={{cursor: 'pointer'}} src={this.props.userPage[this.props.params.username].image_url}  className="user-img-style" />;
       }else {
         profilePic = <img src={this.props.userPage[this.props.params.username].image_url} className="user-img-style" />;
       }
-      followers = <span>{this.props.userPage[this.props.params.username].followers.length} followers</span>;
-      following = <span style={{cursor: 'pointer'}} onClick={this.launchFollowing}>{this.props.userPage[this.props.params.username].following.length} following</span>;
+      followers = <span className="user-follow" onClick={this.launchFollowers}>{this.props.userPage[this.props.params.username].followers.length} followers</span>;
+      following = <span className="user-follow" onClick={this.launchFollowing}>{this.props.userPage[this.props.params.username].following.length} following</span>;
       postsCount = <span>{this.props.userPage[this.props.params.username].posts.length} posts</span>;
       realFollowing = this.props.userPage[this.props.params.username].following;
+      realFollowers = this.props.userPage[this.props.params.username].followers;
     } else {
       profilePic = <div></div>;
       followers = <span></span>;
       following = <span></span>;
       postsCount = <span></span>;
       realFollowing = [];
+      realFollowers = {};
     }
 
     if (this.props.userPage[this.props.params.username]){
@@ -217,6 +235,10 @@ class User extends React.Component {
         <UserFollowing
           modalOpen={this.state.followingModal}
           following={realFollowing}
+          />
+        <UserFollowers
+          modalOpen={this.state.followersModal}
+          followers={realFollowers}
           />
       </section>
       );
