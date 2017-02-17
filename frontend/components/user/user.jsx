@@ -20,6 +20,7 @@ class User extends React.Component {
     this.handleProfilePic = this.handleProfilePic.bind(this);
     this.updateProfilePic = this.updateProfilePic.bind(this);
     this.launchFollowing = this.launchFollowing.bind(this);
+    this.unlaunchFollowing = this.unlaunchFollowing.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +31,7 @@ class User extends React.Component {
     if(this.props.params.username !== nextProps.params.username ||
       this.props.following !== nextProps.following
     ) {
+      this.unlaunchFollowing();
       this.props.fetchUser(nextProps.params.username);
     }
   }
@@ -46,6 +48,10 @@ class User extends React.Component {
 
   launchFollowing(){
     this.setState({ followingModal: true });
+  }
+
+  unlaunchFollowing(){
+    this.setState({ followingModal: false});
   }
 
   openModal(){

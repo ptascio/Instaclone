@@ -8,7 +8,6 @@ class UserFollowing extends React.Component{
     this.state = {
       modalOpen: this.props.modalOpen,
       following: this.props.following,
-
     };
     this.closeModal = this.closeModal.bind(this);
   }
@@ -29,6 +28,7 @@ class UserFollowing extends React.Component{
   }
 
   render(){
+    debugger
     let info = this.props.following;
     let following = Object.keys(info).map(function (key){
       return info[key];
