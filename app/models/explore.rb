@@ -1,6 +1,6 @@
 class Explore < ActiveRecord::Base
   self.table_name = 'posts'
-  default_scope where('boards.ancestry IS NOT NULL')
+  default_scope where('posts.ancestry IS NOT NULL')
 
   validates :user_id, presence: true
 
