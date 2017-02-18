@@ -2,6 +2,7 @@ export const RECEIVE_NEW_POST = "RECEIVE_NEW_POST";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
 export const REMOVE_POST = "REMOVE_POST";
+export const RECEIVE_EXPLORE_POSTS = "RECEIVE_EXPLORE_POSTS";
 
 import * as APIUtil from '../util/post_api_util';
 
@@ -18,6 +19,11 @@ export const receiveErrors = (errors) => ({
 export const receivePosts = (posts) => ({
   type: RECEIVE_POSTS,
   posts
+});
+
+export const receiveExplorePosts = (explorePosts) => ({
+  type: RECEIVE_EXPLORE_POSTS,
+  explorePosts
 });
 
 export const removePost = (post) => ({
@@ -46,6 +52,14 @@ export function fetchPosts() {
   return(dispatch) => {
     return APIUtil.fetchPosts().then(
       (posts) => dispatch(receivePosts(posts))
+    );
+  };
+}
+
+export function fetchExplorePosts() {
+  return(dispatch) => {
+    return APIUtil.fetchExplorePosts().then(
+      (explorePosts) => dispatch(receiveExplorePosts(explorePosts))
     );
   };
 }

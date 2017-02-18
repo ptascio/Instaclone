@@ -4,7 +4,6 @@ class Api::PostsController < ApplicationController
     user_posts = Post.where(user: current_user).all.order(created_at: :desc)
     followers_posts = Post.where(user: current_user.following).all.order(created_at: :desc)
       @posts = user_posts + followers_posts
-      @explore_posts = Post.all - @posts
       render "api/posts/index"
   end
 

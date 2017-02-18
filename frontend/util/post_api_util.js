@@ -16,6 +16,13 @@ export const fetchPosts = () => {
   });
 };
 
+export const fetchExplorePosts = () => {
+  return $.ajax({
+    url: "/api/explores",
+    method: "GET",
+  });
+};
+
 export const destroyPost = (post) => {
   return $.ajax({
     url: `/api/posts/${post.id}`,
