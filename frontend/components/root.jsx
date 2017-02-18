@@ -7,7 +7,6 @@ import GreetingContainer from './greeting/greeting_container';
 import UserContainer from './user/user_container';
 import PostIndexContainer from './post/post_index_container';
 import PostFormContainer from './post/post_form_container';
-import PostExploreContainer from './post/post_explore_container';
 import RelationshipContainer from './relationship/relationship_container';
 import SearchContainer from './search/search_container';
 
@@ -44,7 +43,6 @@ return (
         <Route path="/users/:username" component={ UserContainer } />
         <Route path="/followers" component={ RelationshipContainer } />
         <Route path="/users/search" component= { SearchContainer } />
-        <Route path="/explore" component= { PostExploreContainer } />
       </Route>
 
     </Router>

@@ -53,7 +53,6 @@ class App extends React.Component {
                     <a href="/#/form"><span className="link-items">Post</span></a><br />
                     <a href="" onClick={this.signOut}><span className="link-items">Logout</span></a>
                     <Link to={ userUrl } ><span className="link-items">Me</span></Link>
-                    <a href="/#/explore"><span className="link-items">Explore</span></a>
                   </div>
                 </div>
               </div>
